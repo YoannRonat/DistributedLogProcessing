@@ -2,6 +2,8 @@
 VERT="\\033[1;32m"
 NORMAL="\\033[0;39m"
 
+################# TOOLS INSTALLATION ON SERVER-1 #################
+
 # Hosts configurations
 echo -e "$VERT" "Hosts configurations..." "$NORMAL"
 sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-1\n149.202.167.72 server-2\n149.202.167.66 server-3/g' /etc/hosts 2>&1
@@ -132,6 +134,9 @@ curl -O https://gist.githubusercontent.com/thisismitch/3429023e8438cc25b86c/raw/
 curl -XPUT 'http://localhost:9200/_template/filebeat?pretty' -d@filebeat-index-template.json 2>&1
 echo -e "$VERT" "Loaded Filebeat Index Template in Elasticsearch [OK]" "$NORMAL"
 
+
+################# DEPLOYMENT ON SERVER-2 #################
+
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo locale-gen fr_FR.UTF-8"
 
 echo -e "$VERT" "Copying SSL Certificate to server-2" "$NORMAL"
@@ -141,8 +146,10 @@ echo -e "$VERT" "Copied SSL Certificate to server-2 [OK]" "$NORMAL"
 # Hosts configurations on server-2
 echo -e "$VERT" "Hosts configurations on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-2\n149.202.167.70 server-1\n149.202.167.66 server-3/g' /etc/hosts 2>&1"
-echo -e "$VERT" "Hosts configurations on server-2[OK]" "$NORMAL"
+echo -e "$VERT" "Hosts configurations on server-2 [OK]" "$NORMAL"
 
+
+# Filebeat installation on server-2
 echo -e "$VERT" "Filebeat Package installation on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo mkdir -p /etc/pki/tls/certs 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo cp /tmp/logstash-forwarder.crt /etc/pki/tls/certs/ 2>&1"
@@ -152,13 +159,13 @@ ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get update 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install filebeat 2>&1"
 echo -e "$VERT" "Filebeat Package installation on server-2 [OK]" "$NORMAL"
 
-# C'est un peu long à changer, peut être qu'on récupèra plutot le fichier config à chaque fois (donné en scp)
+# Filebeat configuration on server-2
 echo -e "$VERT" "Filebeat Configuration on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/YoannRonat/fbeed9374b3ca074461368c400e77ed9/raw/0b591ea648f6694b80ac83be3194035b5da9ec18/filebeat.yml"
 echo -e "$VERT" "Filebeat Configuration on server-2 [OK]" "$NORMAL"
 
+# Loading Filebeat on server-2
+echo -e "$VERT" "Loading Filebeat on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo service filebeat restart"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo update-rc.d filebeat defaults 95 10"
-
-
-
+echo -e "$VERT" "Filebeat loaded on server-2 [OK]" "$NORMAL"
