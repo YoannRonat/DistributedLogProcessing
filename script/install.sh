@@ -169,3 +169,38 @@ echo -e "$VERT" "Loading Filebeat on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo service filebeat restart"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo update-rc.d filebeat defaults 95 10"
 echo -e "$VERT" "Filebeat loaded on server-2 [OK]" "$NORMAL"
+
+
+################# DEPLOYMENT ON SERVER-3 #################
+
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo locale-gen fr_FR.UTF-8"
+
+echo -e "$VERT" "Copying SSL Certificate to server-3" "$NORMAL"
+scp -i ~/.ssh/xnet /etc/pki/tls/certs/logstash-forwarder.crt xnet@server-3:/tmp
+echo -e "$VERT" "Copied SSL Certificate to server-3 [OK]" "$NORMAL"
+
+# Hosts configurations on server-3
+echo -e "$VERT" "Hosts configurations on server-3..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-3\n149.202.167.70 server-1\n149.202.167.72 server-2/g' /etc/hosts 2>&1"
+echo -e "$VERT" "Hosts configurations on server-3 [OK]" "$NORMAL"
+
+# Filebeat installation on server-3
+echo -e "$VERT" "Filebeat Package installation on server-3..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo mkdir -p /etc/pki/tls/certs 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo cp /tmp/logstash-forwarder.crt /etc/pki/tls/certs/ 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 'echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list 2>&1'
+ssh -i ~/.ssh/xnet xnet@server-3 "wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get update 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install filebeat 2>&1"
+echo -e "$VERT" "Filebeat Package installation on server-3 [OK]" "$NORMAL"
+
+# Filebeat configuration on server-3
+echo -e "$VERT" "Filebeat Configuration on server-3..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/YoannRonat/fbeed9374b3ca074461368c400e77ed9/raw/0b591ea648f6694b80ac83be3194035b5da9ec18/filebeat.yml"
+echo -e "$VERT" "Filebeat Configuration on server-3 [OK]" "$NORMAL"
+
+# Loading Filebeat on server-3
+echo -e "$VERT" "Loading Filebeat on server-3..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo service filebeat restart"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo update-rc.d filebeat defaults 95 10"
+echo -e "$VERT" "Filebeat loaded on server-3 [OK]" "$NORMAL"
