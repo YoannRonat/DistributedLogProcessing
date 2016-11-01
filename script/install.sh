@@ -154,17 +154,8 @@ echo -e "$VERT" "Filebeat Package installation on server-2 [OK]" "$NORMAL"
 
 # C'est un peu long à changer, peut être qu'on récupèra plutot le fichier config à chaque fois (donné en scp)
 echo -e "$VERT" "Filebeat Configuration on server-2..." "$NORMAL"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's#- /var/log/\*.log#- /var/log/syslog#g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/#document_type: log/document_type: syslog/g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/elasticsearch:/#elasticsearch:/g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/hosts: \[\"localhost:9200\"\]/#hosts: \[\"localhost:9200\"\]/g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/#logstash:/logstash:/g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/#hosts: \[\"localhost:5044\"\]/hosts: \[\"server-1:5044\"\]/g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/#bulk_max_size: 2048/bulk_max_size: 1024/g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/    #tls:/    tls:/g' /etc/filebeat/filebeat.yml 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's*      #certificate_authorities: \[\"/etc/pki/root/ca.pem\"\]*      certificate_authorities: \[\"/etc/pki/tls/certs/logstash-forwarder.crt\"\]*g' /etc/filebeat/filebeat.yml 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-2 "sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/YoannRonat/fbeed9374b3ca074461368c400e77ed9/raw/0b591ea648f6694b80ac83be3194035b5da9ec18/filebeat.yml"
 echo -e "$VERT" "Filebeat Configuration on server-2 [OK]" "$NORMAL"
-
 
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo service filebeat restart"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo update-rc.d filebeat defaults 95 10"
