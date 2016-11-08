@@ -3,19 +3,23 @@
 
 ####Installation####
 ```bash
-wget https://artifacts.elastic.co/downloads/kibana/kibana-5.0.0-linux-x86_64.tar.gz
-tar -xzf kibana-5.0.0-linux-x86_64.tar.gz
+echo "deb http://packages.elastic.co/kibana/4.4/debian stable main" | sudo tee -a /etc/apt/sources.list.d/kibana-4.4.x.lis
+sudo apt-get update
+sudo apt-get -y install kibana
 ```
 
 ####Configuration####
-1. Ouvrir le fichier de configuration se trouvant à l'emplacement suivant :
+1. Décommenter la ligne suivante : server.host: "localhost"
 ```
-$KIBANA_HOME/config/kibana.yml
+sudo sed -i 's/# server\.host.*/server.host: "localhost"/g' /opt/kibana/config/kibana.yml
 ```
 
-2. Décommenter la ligne suivante : server.host: "localhost"
+2. Exécuter la commande suivante :
+```
+sudo update-rc.d kibana defaults 96 9
+```
 
 ####Lancement####
 ```
-$KIBANA_HOME/bin/kibana
+sudo service kibana start
 ```
