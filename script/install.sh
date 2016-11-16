@@ -3,6 +3,7 @@ VERT="\\033[1;32m"
 NORMAL="\\033[0;39m"
 
 ################# TOOLS INSTALLATION ON SERVER-1 #################
+sudo locale-gen fr_FR.UTF-8
 
 # Hosts configurations
 echo -e "$VERT" "Hosts configurations..." "$NORMAL"
@@ -11,6 +12,7 @@ echo -e "$VERT" "Hosts configurations [OK]" "$NORMAL"
 
 # Java installation
 echo -e "$VERT" "Java installation..." "$NORMAL"
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
 sudo add-apt-repository -y ppa:webupd8team/java 2>&1
 sudo apt-get update 2>&1
 sudo apt-get -y install oracle-java8-installer 2>&1
@@ -20,7 +22,7 @@ echo -e "$VERT" "Java installation [OK]" "$NORMAL"
 echo -e "$VERT" "Elasticsearch installation..." "$NORMAL"
 echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list 2>&1
 sudo apt-get update 2>&1
-sudo apt-get -y install elasticsearch 2>&1
+sudo apt-get -y install elasticsearch --allow-unauthenticated 2>&1
 sudo sed -i 's/# network.*/network.host: [_local_, _ens3_]/g' /etc/elasticsearch/elasticsearch.yml 2>&1
 sudo service elasticsearch restart 2>&1
 sudo update-rc.d elasticsearch defaults 95 10 2>&1
@@ -30,7 +32,7 @@ echo -e "$VERT" "Elasticsearch installation [OK]" "$NORMAL"
 echo -e "$VERT" "Kibana installation..." "$NORMAL"
 echo "deb http://packages.elastic.co/kibana/4.4/debian stable main" | sudo tee -a /etc/apt/sources.list.d/kibana-4.4.x.list 2>&1 2>&1
 sudo apt-get update 2>&1
-sudo apt-get -y install kibana 2>&1
+sudo apt-get -y install kibana --allow-unauthenticated 2>&1
 sudo sed -i 's/# server\.host.*/server.host: "localhost"/g' /opt/kibana/config/kibana.yml 2>&1
 sudo update-rc.d kibana defaults 96 9 2>&1
 sudo service kibana start 2>&1
@@ -69,7 +71,7 @@ echo -e "$VERT" "Nginx installation [OK]" "$NORMAL"
 echo -e "$VERT" "Logstash installation..." "$NORMAL"
 echo 'deb http://packages.elastic.co/logstash/2.2/debian stable main' | sudo tee /etc/apt/sources.list.d/logstash-2.2.x.list 2>&1
 sudo apt-get update 2>&1
-sudo apt-get install logstash 2>&1
+sudo apt-get install logstash --allow-unauthenticated 2>&1
 sudo mkdir -p /etc/pki/tls/certs 2>&1
 sudo mkdir /etc/pki/tls/private 2>&1
 cd /etc/pki/tls; sudo openssl req -subj '/CN=localhost/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt 2>&1;cd
@@ -106,7 +108,7 @@ EOF
 cat <<"EOF"
 output {
 	elasticsearch {
-		hosts => ["localhost:9200"]
+		hosts => ["localhost:9200", "server-2:9200", "server-3:9200"]
 		sniffing => true
 		manage_template => false
 		index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
@@ -139,12 +141,12 @@ echo -e "$VERT" "Filebeat Package installation on server-1..." "$NORMAL"
 echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list 2>&1
 wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1
 sudo apt-get update 2>&1
-sudo apt-get install filebeat 2>&1
+sudo apt-get install filebeat --allow-unauthenticated 2>&1
 echo -e "$VERT" "Filebeat Package installation on server-1 [OK]" "$NORMAL"
 
 # Filebeat configuration on server-1
 echo -e "$VERT" "Filebeat Configuration on server-1..." "$NORMAL"
-sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/YoannRonat/fbeed9374b3ca074461368c400e77ed9/raw/0b591ea648f6694b80ac83be3194035b5da9ec18/filebeat.yml
+sudo curl -o /etc/filebeat/filebeat.yml https://gist.githubusercontent.com/trussello/74b8312a0435981c83dd543f841a459a/raw/958042c0171ca5e46a6c8ef41606eefa65e9b91c/filebeat.yml
 echo -e "$VERT" "Filebeat Configuration on server-1 [OK]" "$NORMAL"
 
 # Loading Filebeat on server-1
@@ -173,6 +175,7 @@ echo -e "$VERT" "Hosts configurations on server-2 [OK]" "$NORMAL"
 
 # Java installation
 echo -e "$VERT" "Java installation..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-2 'echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections'
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo add-apt-repository -y ppa:webupd8team/java 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get update 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get -y install oracle-java8-installer 2>&1"
@@ -182,7 +185,7 @@ echo -e "$VERT" "Java installation [OK]" "$NORMAL"
 echo -e "$VERT" "Elasticsearch installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "echo 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main' | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get update 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get -y install elasticsearch 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get -y install elasticsearch --allow-unauthenticated 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/# network.*/network.host: [_local_, _ens3_]/g' /etc/elasticsearch/elasticsearch.yml 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo service elasticsearch restart 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo update-rc.d elasticsearch defaults 95 10 2>&1"
@@ -192,7 +195,7 @@ echo -e "$VERT" "Elasticsearch installation [OK]" "$NORMAL"
 echo -e "$VERT" "Logstash installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "echo 'deb http://packages.elastic.co/logstash/2.2/debian stable main' | sudo tee /etc/apt/sources.list.d/logstash-2.2.x.list 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get update 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install logstash 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install logstash --allow-unauthenticated 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo mkdir -p /etc/pki/tls/certs 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo mkdir /etc/pki/tls/private 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "cd /etc/pki/tls; sudo openssl req -subj '/CN=localhost/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt 2>&1;cd"
@@ -233,7 +236,7 @@ ssh -i ~/.ssh/xnet xnet@server-2 '(
 cat <<"EOF"
 output {
 	elasticsearch {
-		hosts => ["localhost:9200", "server-1", "server-3"]
+		hosts => ["localhost:9200", "server-1:9200", "server-3:9200"]
 		sniffing => true
 		manage_template => false
 		index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
@@ -260,12 +263,12 @@ echo -e "$VERT" "Filebeat Package installation on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 'echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list 2>&1'
 ssh -i ~/.ssh/xnet xnet@server-2 "wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get update 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install filebeat 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install filebeat --allow-unauthenticated 2>&1"
 echo -e "$VERT" "Filebeat Package installation on server-2 [OK]" "$NORMAL"
 
 # Filebeat configuration on server-2
 echo -e "$VERT" "Filebeat Configuration on server-2..." "$NORMAL"
-ssh -i ~/.ssh/xnet xnet@server-2 "sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/YoannRonat/fbeed9374b3ca074461368c400e77ed9/raw/0b591ea648f6694b80ac83be3194035b5da9ec18/filebeat.yml"
+ssh -i ~/.ssh/xnet xnet@server-2 "sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/trussello/74b8312a0435981c83dd543f841a459a/raw/958042c0171ca5e46a6c8ef41606eefa65e9b91c/filebeat.yml"
 echo -e "$VERT" "Filebeat Configuration on server-2 [OK]" "$NORMAL"
 
 # Loading Filebeat on server-2
@@ -273,6 +276,7 @@ echo -e "$VERT" "Loading Filebeat on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo service filebeat restart"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo update-rc.d filebeat defaults 95 10"
 echo -e "$VERT" "Filebeat loaded on server-2 [OK]" "$NORMAL"
+
 
 
 
@@ -294,6 +298,7 @@ echo -e "$VERT" "Hosts configurations on server-3 [OK]" "$NORMAL"
 
 # Java installation
 echo -e "$VERT" "Java installation..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-3 'echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections'
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo add-apt-repository -y ppa:webupd8team/java 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get update 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get -y install oracle-java8-installer 2>&1"
@@ -303,7 +308,7 @@ echo -e "$VERT" "Java installation [OK]" "$NORMAL"
 echo -e "$VERT" "Elasticsearch installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 "echo 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main' | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get update 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get -y install elasticsearch 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get -y install elasticsearch --allow-unauthenticated 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo sed -i 's/# network.*/network.host: [_local_, _ens3_]/g' /etc/elasticsearch/elasticsearch.yml 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo service elasticsearch restart 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo update-rc.d elasticsearch defaults 95 10 2>&1"
@@ -313,7 +318,7 @@ echo -e "$VERT" "Elasticsearch installation [OK]" "$NORMAL"
 echo -e "$VERT" "Logstash installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 "echo 'deb http://packages.elastic.co/logstash/2.2/debian stable main' | sudo tee /etc/apt/sources.list.d/logstash-2.2.x.list 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get update 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install logstash 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install logstash --allow-unauthenticated 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo mkdir -p /etc/pki/tls/certs 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo mkdir /etc/pki/tls/private 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "cd /etc/pki/tls; sudo openssl req -subj '/CN=localhost/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt 2>&1;cd"
@@ -354,7 +359,7 @@ ssh -i ~/.ssh/xnet xnet@server-3 '(
 cat <<"EOF"
 output {
 	elasticsearch {
-		hosts => ["localhost:9200", "server-1", "server-2"]
+		hosts => ["localhost:9200", "server-1:9200", "server-2:9200"]
 		sniffing => true
 		manage_template => false
 		index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
@@ -381,16 +386,16 @@ echo -e "$VERT" "Filebeat Package installation on server-3..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 'echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list 2>&1'
 ssh -i ~/.ssh/xnet xnet@server-3 "wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get update 2>&1"
-ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install filebeat 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install filebeat --allow-unauthenticated 2>&1"
 echo -e "$VERT" "Filebeat Package installation on server-3 [OK]" "$NORMAL"
 
 # Filebeat configuration on server-3
 echo -e "$VERT" "Filebeat Configuration on server-3..." "$NORMAL"
-ssh -i ~/.ssh/xnet xnet@server-3 "sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/YoannRonat/fbeed9374b3ca074461368c400e77ed9/raw/0b591ea648f6694b80ac83be3194035b5da9ec18/filebeat.yml"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo curl -o /etc/filebeat/filebeat.yml  https://gist.githubusercontent.com/trussello/74b8312a0435981c83dd543f841a459a/raw/958042c0171ca5e46a6c8ef41606eefa65e9b91c/filebeat.yml"
 echo -e "$VERT" "Filebeat Configuration on server-3 [OK]" "$NORMAL"
 
 # Loading Filebeat on server-3
 echo -e "$VERT" "Loading Filebeat on server-3..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo service filebeat restart"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo update-rc.d filebeat defaults 95 10"
-echo -e "$VERT" "Filebeat loaded on server-3 [OK]" "$NORMAL"
+echo -e "$VERT" "Filebeat loaded on server-3 [OK]" "$NORMAL"	
