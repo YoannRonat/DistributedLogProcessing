@@ -1,0 +1,9 @@
+GAMETIME %{DATE_US} - %{TIME}:
+
+ENDGAME "Game_Over"
+
+RED Team "Red" final score "(%{INT:Red_score})"
+
+BLUE Team "Blue" final score "(%{INT:Blue_score})"
+
+FINALSCORE Team ("Red"|"Blue") final score
