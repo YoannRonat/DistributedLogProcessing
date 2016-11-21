@@ -3,16 +3,13 @@
 # script simple permettant de télécharger les logs du numéro
 # $SMALLER au numéro $BIGGER
 
-SMALLER="1566050"
-BIGGER="1566055"
-
-SERVER_1="149.202.167.70"
-SERVER_2="149.202.167.72"
-SERVER_3="149.202.167.66"
+SMALLER=$1
+BIGGER=$2
 
 rm -rf /tmp/logs_tf
 mkdir /tmp/logs_tf
 
+# TODO : Optimisation possible ?
 for i in $(seq $SMALLER 1 $BIGGER)
 do
 	#echo $i
@@ -21,7 +18,7 @@ do
 	rm /tmp/logs_tf/log_$i.log.zip
 done
 
-# for (( i = $SMALLER; i < $BIGGER; i=i+3 )); do
-# 	# echo $i
-	
-# done
+# TODO : trouver comment savoir que logstash a tout reçu
+sleep 2
+
+rm /tmp/logs_tf/*
