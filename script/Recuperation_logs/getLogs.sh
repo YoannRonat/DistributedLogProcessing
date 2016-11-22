@@ -54,4 +54,4 @@ elif [ $1 = "serveur3" ]
 fi
 
 # Le script de téléchargement des logs est exécuté sur la machine esclave
-ssh -i ~/.ssh/xnet xnet@$SERVEUR "sh logDl.sh $LOGNUMBER $LAST" &
+ssh -i ~/.ssh/xnet xnet@$SERVEUR "sh logDl.sh $LOGNUMBER $LAST"
