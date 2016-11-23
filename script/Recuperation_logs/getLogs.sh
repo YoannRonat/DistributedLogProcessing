@@ -10,14 +10,14 @@ LOGNUMBER=$2
 PAS=$3
 LAST=$(($LOGNUMBER+$PAS))
 
-serveur1="149.202.167.70"
-serveur2="149.202.167.72"
-serveur3="149.202.167.66"
+server1="149.202.167.70"
+server2="149.202.167.72"
+server3="149.202.167.66"
 
 echohelp()
 {
 	echo 'Utilisation : ./getLogs.sh <serveur> <logNumber> <pas>'
-	echo 'Possibiltés pour <serveur> : serveur1, serveur2, serveur3'
+	echo 'Possibiltés pour <serveur> : server1, server2, server3'
 }
 
 if [ $# != 3 ]
@@ -27,7 +27,7 @@ if [ $# != 3 ]
 	exit 1
 fi
 
-if [ $1 != "serveur1" ] && [ $1 != "serveur2" ] && [ $1 != "serveur3" ]
+if [ $1 != "server1" ] && [ $1 != "server2" ] && [ $1 != "server3" ]
 	then
 	echo 'Erreur : mauvais arguments'
 	echohelp
@@ -42,15 +42,15 @@ if ! [[ $2 =~ $int ]] || ! [[ $3 =~ $int ]]
 	exit 1
 fi
 
-if [ $1 = "serveur1" ]
+if [ $1 = "server1" ]
 	then
-	SERVEUR=$serveur1
-elif [ $1 = "serveur2" ]
+	SERVEUR=$server1
+elif [ $1 = "server2" ]
 	then
-	SERVEUR=$serveur2
-elif [ $1 = "serveur3" ]
+	SERVEUR=$server2
+elif [ $1 = "server3" ]
 	then
-	SERVEUR=$serveur3
+	SERVEUR=$server3
 fi
 
 # Le script de téléchargement des logs est exécuté sur la machine esclave

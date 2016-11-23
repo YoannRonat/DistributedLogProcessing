@@ -146,7 +146,8 @@ echo -e "$VERT" "Filebeat Package installation on server-1 [OK]" "$NORMAL"
 
 # Filebeat configuration on server-1
 echo -e "$VERT" "Filebeat Configuration on server-1..." "$NORMAL"
-sudo curl -o /etc/filebeat/filebeat.yml https://gist.githubusercontent.com/trussello/74b8312a0435981c83dd543f841a459a/raw/958042c0171ca5e46a6c8ef41606eefa65e9b91c/filebeat.yml
+#sudo curl -o /etc/filebeat/filebeat.yml https://gist.githubusercontent.com/trussello/74b8312a0435981c83dd543f841a459a/raw/958042c0171ca5e46a6c8ef41606eefa65e9b91c/filebeat.yml
+sudo curl -o /etc/filebeat/filebeat.yml https://gist.githubusercontent.com/Erennor/f13ad8b08a2351306de8ec3f4d695984/raw/66ea5c018d029f7c2ac4d014562c58752d7ed50e/filebeat.yml
 echo -e "$VERT" "Filebeat Configuration on server-1 [OK]" "$NORMAL"
 
 # Loading Filebeat on server-1

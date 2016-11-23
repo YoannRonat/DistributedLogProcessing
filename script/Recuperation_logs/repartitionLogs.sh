@@ -13,13 +13,16 @@ FIRST="1181650"
 FIRST="1500000"
 
 CURRENT=$FIRST
-PAS="29"
+PAS="99"
 
 LAST=$(($FIRST+(3*($PAS+1))))
 
-serveur1="149.202.167.70"
-serveur2="149.202.167.72"
-serveur3="149.202.167.66"
+server1="149.202.167.70"
+server2="149.202.167.72"
+server3="149.202.167.66"
+
+ssh -i ~/.ssh/xnet xnet@server-1 "echo $FIRST >> recu.txt"
+ssh -i ~/.ssh/xnet xnet@server-1 "echo $LAST >> recu.txt"
 
 requete()
 {
@@ -31,7 +34,7 @@ requete()
 checkServeur()
 {
 	echo -e "$ROUGE""Check de serveur$1$NORMAL"
-	SERVEUR=$(echo 'serveur'$1)
+	SERVEUR=$(echo 'server'$1)
 	#ssh -i ~/.ssh/xnet xnet@$SERVEUR "mkdir /tmp/logs_tf"
 	#LOGS_PRESENT=$(ssh -i ~/.ssh/xnet xnet@$SERVEUR "ls /tmp/logs_tf")
 
