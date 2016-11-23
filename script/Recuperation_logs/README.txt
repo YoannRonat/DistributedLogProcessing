@@ -20,5 +20,4 @@ du numéro x au (x + $pas) où $pas est le nombre de logs à
 télécharger par paquets.
 
 TODO : Ce qui n'est pas encore fait :
-- Savoir comment une machine esclave peut savoir si logstash 
-	a bien reçu tous ses logs
+	Tolérance aux fautes

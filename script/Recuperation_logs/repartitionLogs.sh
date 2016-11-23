@@ -10,16 +10,21 @@ ROUGE="\\033[1;31m"
 
 # Premier log de 2016
 FIRST="1181650"
+
 FIRST="1500000"
 
 CURRENT=$FIRST
-PAS="99"
+
+# 3*($PAS + 1) logs sont téléchargés
+PAS="9"
 
 LAST=$(($FIRST+(3*($PAS+1))))
 
 server1="149.202.167.70"
 server2="149.202.167.72"
 server3="149.202.167.66"
+
+ssh -i ~/.ssh/xnet xnet@server-1 "rm recu.txt done.txt"
 
 ssh -i ~/.ssh/xnet xnet@server-1 "echo $FIRST >> recu.txt"
 ssh -i ~/.ssh/xnet xnet@server-1 "echo $LAST >> recu.txt"
@@ -57,3 +62,13 @@ do
 	echo ''
 
 done
+
+DONE=$(ssh -i ~/.ssh/xnet xnet@server-1 "cat done.txt | wc -l")
+while [ $DONE != "3" ]
+do
+	DONE=$(ssh -i ~/.ssh/xnet xnet@server-1 "cat done.txt | wc -l")
+done
+
+NB_LOGS=$(ssh -i ~/.ssh/xnet xnet@server-1 "cat recu.txt | wc -l")
+NB_LOGS=$(($NB_LOGS-2))
+echo -e "$VERT""Les logs $FIRST à $LAST ($NB_LOGS) ont été téléchargés avec succès !$NORMAL"
