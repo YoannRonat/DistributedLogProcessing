@@ -157,7 +157,8 @@ sudo update-rc.d filebeat defaults 95 10
 echo -e "$VERT" "Filebeat loaded on server-1 [OK]" "$NORMAL"
 
 
-
+# Installation unzip
+sudo apt-get install unzip
 
 
 
@@ -279,7 +280,8 @@ ssh -i ~/.ssh/xnet xnet@server-2 "sudo update-rc.d filebeat defaults 95 10"
 echo -e "$VERT" "Filebeat loaded on server-2 [OK]" "$NORMAL"
 
 
-
+# Installation unzip
+ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install unzip"
 
 
 
@@ -400,3 +402,6 @@ echo -e "$VERT" "Loading Filebeat on server-3..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo service filebeat restart"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo update-rc.d filebeat defaults 95 10"
 echo -e "$VERT" "Filebeat loaded on server-3 [OK]" "$NORMAL"	
+
+# Installation unzip
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install unzip"
