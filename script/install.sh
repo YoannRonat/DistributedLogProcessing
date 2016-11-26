@@ -10,6 +10,11 @@ echo -e "$VERT" "Hosts configurations..." "$NORMAL"
 sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-1\n149.202.167.72 server-2\n149.202.167.66 server-3/g' /etc/hosts 2>&1
 echo -e "$VERT" "Hosts configurations [OK]" "$NORMAL"
 
+# Unzip installation
+echo -e "$VERT" "Unzip installation..." "$NORMAL"
+sudo apt-get install unzip
+echo -e "$VERT" "Unzip installation [OK]" "$NORMAL"
+
 # Java installation
 echo -e "$VERT" "Java installation..." "$NORMAL"
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
@@ -21,6 +26,7 @@ echo -e "$VERT" "Java installation [OK]" "$NORMAL"
 # Elasticsearch installation
 echo -e "$VERT" "Elasticsearch installation..." "$NORMAL"
 echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list 2>&1
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1
 sudo apt-get update 2>&1
 sudo apt-get -y install elasticsearch --allow-unauthenticated 2>&1
 sudo sed -i 's/# network.*/network.host: [_local_, _ens3_]/g' /etc/elasticsearch/elasticsearch.yml 2>&1
@@ -139,7 +145,6 @@ echo -e "$VERT" "Loaded Filebeat Index Template in Elasticsearch [OK]" "$NORMAL"
 # Filebeat installation on server-1
 echo -e "$VERT" "Filebeat Package installation on server-1..." "$NORMAL"
 echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list 2>&1
-wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1
 sudo apt-get update 2>&1
 sudo apt-get install filebeat --allow-unauthenticated 2>&1
 echo -e "$VERT" "Filebeat Package installation on server-1 [OK]" "$NORMAL"
@@ -174,6 +179,12 @@ echo -e "$VERT" "Hosts configurations on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-2\n149.202.167.70 server-1\n149.202.167.66 server-3/g' /etc/hosts 2>&1"
 echo -e "$VERT" "Hosts configurations on server-2 [OK]" "$NORMAL"
 
+# Unzip installation
+echo -e "$VERT" "Unzip installation..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install unzip"
+echo -e "$VERT" "Unzip installation [OK]" "$NORMAL"
+
+
 # Java installation
 echo -e "$VERT" "Java installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 'echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections'
@@ -185,6 +196,7 @@ echo -e "$VERT" "Java installation [OK]" "$NORMAL"
 # Elasticsearch installation
 echo -e "$VERT" "Elasticsearch installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "echo 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main' | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-2 "wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get update 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get -y install elasticsearch --allow-unauthenticated 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/# network.*/network.host: [_local_, _ens3_]/g' /etc/elasticsearch/elasticsearch.yml 2>&1"
@@ -262,7 +274,6 @@ echo -e "$VERT" "Loaded Filebeat Index Template in Elasticsearch [OK]" "$NORMAL"
 # Filebeat installation on server-2
 echo -e "$VERT" "Filebeat Package installation on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 'echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list 2>&1'
-ssh -i ~/.ssh/xnet xnet@server-2 "wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get update 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo apt-get install filebeat --allow-unauthenticated 2>&1"
 echo -e "$VERT" "Filebeat Package installation on server-2 [OK]" "$NORMAL"
@@ -297,6 +308,11 @@ echo -e "$VERT" "Hosts configurations on server-3..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-3\n149.202.167.70 server-1\n149.202.167.72 server-2/g' /etc/hosts 2>&1"
 echo -e "$VERT" "Hosts configurations on server-3 [OK]" "$NORMAL"
 
+# Unzip installation
+echo -e "$VERT" "Unzip installation..." "$NORMAL"
+ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install unzip"
+echo -e "$VERT" "Unzip installation [OK]" "$NORMAL"
+
 # Java installation
 echo -e "$VERT" "Java installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 'echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections'
@@ -308,6 +324,7 @@ echo -e "$VERT" "Java installation [OK]" "$NORMAL"
 # Elasticsearch installation
 echo -e "$VERT" "Elasticsearch installation..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 "echo 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main' | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list 2>&1"
+ssh -i ~/.ssh/xnet xnet@server-3 "wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get update 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get -y install elasticsearch --allow-unauthenticated 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo sed -i 's/# network.*/network.host: [_local_, _ens3_]/g' /etc/elasticsearch/elasticsearch.yml 2>&1"
@@ -385,7 +402,6 @@ echo -e "$VERT" "Loaded Filebeat Index Template in Elasticsearch [OK]" "$NORMAL"
 # Filebeat installation on server-3
 echo -e "$VERT" "Filebeat Package installation on server-3..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 'echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list 2>&1'
-ssh -i ~/.ssh/xnet xnet@server-3 "wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get update 2>&1"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo apt-get install filebeat --allow-unauthenticated 2>&1"
 echo -e "$VERT" "Filebeat Package installation on server-3 [OK]" "$NORMAL"
