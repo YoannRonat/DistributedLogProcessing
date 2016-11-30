@@ -1,11 +1,33 @@
-Monit - Getting started
+M/Monit - Getting started
 ========
+
+#M/Monit
+
+### Présentation
+
+*M/Monit* est un outil de surveillance de services permettant de regrouper toutes les instances de *monit* (voir deuxième section) sur différentes machines dans une seule page Web.
+
+### Installation
+
+```
+wget https://mmonit.com/dist/mmonit-3.6.2-linux-x64.tar.gz
+tar -xzvf mmonit-3.6.2-linux-x64.tar.gz
+cd mmonit-3.6.2
+```
+
+### Utilisation
+
+* Démarrer M/Monit : `mmonit start`
+* Arrêter M/Monit : `mmonit stop`
+* Vérifier que le *daemon* est activé, en se connectant à l'adresse : `http://149.202.167.70:8080/` (l'adresse IP correspond à l'adresse IP de la machine monitrice)
+
+#Monit
 
 ### Présentation
 
 *monit* est un outil de surveillance de services locaux. Il vérifie la disponibilité des *daemons* présents sur le serveur qui l'accueille. En cas de panne, *monit* peut alerter l'administrateur du système.
 
-La particularité de *monit* par rapport à d'autres solutions similaires (Zabbix, Nagios) réside dans le fait qu'il est capable de déclencher des actions pour tenter de rétablir un service interrompu, comme par exemple relancer un serveur Apache si il ne répond plus ou vider la file d'attente d'un serveur Postfix en cas d'engorgement.
+La particularité de *monit* par rapport à d'autres solutions similaires (Zabbix, Nagios) réside dans le fait qu'il est capable de déclencher des actions pour tenter de rétablir un service interrompu, comme par exemple relancer un serveur Apache s'il ne répond plus ou vider la file d'attente d'un serveur Postfix en cas d'engorgement.
 
 ### Installation
 
@@ -15,20 +37,21 @@ sudo apt-get install monit
 
 ### Configuration
 
-Dans premier temps, il convient d'éditer la configuration pour définir les paramètres généraux du démon monit. La configuration des services surveillés sera abordée dans la partie suivante.
-
-Éditer le fichier /etc/monit/monitrc. afin d'obtenir les options suivantes :
+Éditer le fichier /etc/monit/monitrc sur chaque machine afin d'obtenir les options suivantes.
+Sur les machines non monitrices (celles où *M/Monit* ne tourne pas), remplacer à la ligne 3 "localhost" par l'adresse IP de la machine monitrice.
 
 ```
 set daemon 60
-set logfile syslog facility log_daemon
+
+set eventqueue basedir /var/monit slots 1000
+set mmonit http://admin:swordfish@localhost:8080/collector
 set mailserver localhost
-set mail-format { from: monit@serveurdev.example.com }
 set alert root@localhost
-set httpd port 2812 and
-   SSL ENABLE
-   PEMFILE  /var/certs/monit.pem
-   allow admin:test
+set logfile syslog facility log_daemon
+
+set httpd port 2812 and use address localhost
+allow localhost
+allow admin:monit
 ```
 
 L'instruction set daemon permet de définir la durée d'un "cycle" monit. Un cycle correspond à l'intervalle (en secondes) entre deux vérifications.
@@ -95,8 +118,7 @@ allow admin:monit
 
 ### Commandes
 
-* Démarrer monit : `/etc/init.d/monit start`
-*  Vérifier que le *daemon* est activé, en se connectant à l'adresse : `http://serveurdev.exemple.fr:2812/`
+* Démarrer monit : `/etc/init.d/monit start` ou `sudo service monit start`
 
 ### Utilisation
 
@@ -117,5 +139,4 @@ check process sshd with pidfile /var/run/sshd.pid
     if 5 restarts within 5 cycles then timeout
 ```
 
-La dernière ligne permet d'éviter des boucles infinies, notamment si la configuration du serveur SSH est erronée.:w
-
+La dernière ligne permet d'éviter des boucles infinies, notamment si la configuration du serveur SSH est erronée.
