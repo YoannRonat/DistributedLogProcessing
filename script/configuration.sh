@@ -60,6 +60,14 @@ configuration_stack () {
 	echo -e "$VERT" "Filebeat Configuration on server-"$num"..." "$NORMAL"
 	eval ""$cmd"sudo wget -O /etc/filebeat/filebeat.yml https://gist.githubusercontent.com/Erennor/f13ad8b08a2351306de8ec3f4d695984/raw/66ea5c018d029f7c2ac4d014562c58752d7ed50e/filebeat.yml"$end_cmd""
 	echo -e "$VERT" "Filebeat Configuration on server-"$num" [OK]" "$NORMAL"
+
+	# Monit configuration
+	echo -e "$VERT" "Monit Configuration on server-"$num"..." "$NORMAL"
+	# TODO
+	echo -e "$VERT" "Monit Configuration on server-"$num" [OK]" "$NORMAL"
+
+	# ZooKeeper configuration
+
 }
 
 ################# DEPLOYMENT ON SERVER-1 #################
