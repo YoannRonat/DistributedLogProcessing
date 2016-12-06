@@ -66,14 +66,14 @@ installation_stack () {
 
 	# M/Monit Installation
 	echo -e "$VERT" "M/Monit installation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"wget https://mmonit.com/dist/mmonit-3.6.2-linux-x64.tar.gz 2>1&"$end_cmd""
-	eval ""$cmd"tar -xzvf mmonit-3.6.2-linux-x64.tar.gz 2>1&"$end_cmd""
-	eval ""$cmd"rm mmonit-3.6.2-linux-x64.tar.gz 2>1&"$end_cmd""
+	eval ""$cmd"wget https://mmonit.com/dist/mmonit-3.6.2-linux-x64.tar.gz 2>&1"$end_cmd""
+	eval ""$cmd"tar -xzvf mmonit-3.6.2-linux-x64.tar.gz 2>&1"$end_cmd""
+	eval ""$cmd"rm mmonit-3.6.2-linux-x64.tar.gz 2>&1"$end_cmd""
 	echo -e "$VERT" "M/Monit installation on server-"$num"  [OK]" "$NORMAL"
 
 	# Monit Installation
 	echo -e "$VERT" "Monit installation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo apt-get install -y monit 2>1&"$end_cmd""
+	eval ""$cmd"sudo apt-get install -y monit 2>&1"$end_cmd""
 	echo -e "$VERT" "Monit installation on server-"$num"  [OK]" "$NORMAL"
 
 	# ZooKeeper Installation
