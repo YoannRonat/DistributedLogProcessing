@@ -39,16 +39,27 @@ uninstall_stack() {
 	eval ""$cmd"yes | sudo apt-get remove --purge logstash 2>&1"$end_cmd""
 	echo -e "$VERT" "Logstash uninstallation on server-"$num"  [OK]" "$NORMAL"
 
-	# Loading Kibana Dashboards
+	# Removing Kibana Dashboards
 	echo -e "$VERT" "Kibana uninstallation on server-"$num" ..." "$NORMAL"
 	eval ""$cmd"rm -rf beats-dashboards-* 2>&1"$end_cmd""
 	echo -e "$VERT" "Kibana uninstallation on server-"$num"  [OK]" "$NORMAL"
 
-	# Filebeat uninstallation on server-1
+	# Filebeat uninstallation
 	echo -e "$VERT" "Filebeat Package uninstallation on server-"$num" ..." "$NORMAL"
 	eval ""$cmd"yes | sudo apt-get remove --purge filebeat 2>&1"$end_cmd""
 	echo -e "$VERT" "Filebeat Package uninstallation on server-"$num"  [OK]" "$NORMAL"
 
+	# ZooKeeper uninstallation
+	echo -e "$VERT" "ZooKeeper uninstallation on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"rm -rf ~/zookeeper"$end_cmd""
+	echo -e "$VERT" "ZooKeeper uninstallation  on server-"$num"  [OK]" "$NORMAL"
+
+	# M/Monit uninstallation
+	echo -e "$VERT" "M/Monit uninstallation on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"rm -rf ~/mmonit-3.6.2"$end_cmd""
+	echo -e "$VERT" "M/Monit uninstallation  on server-"$num"  [OK]" "$NORMAL"
+
+	eval ""$cmd"rm ~/filebeat-index-template.json 2>&1"$end_cmd""
 	eval ""$cmd"yes | sudo apt-get autoremove 2>&1"$end_cmd""
 }
 
