@@ -14,31 +14,38 @@ stop_stack () {
 	[[ $# > 0 ]] &&  cmd="ssh -i  ~/.ssh/xnet xnet@server-$1 \"" && end_cmd="\"" && num="$1"
 
 
-	# Elasticsearch starting
-	echo -e "$VERT" "Elasticsearch starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service elasticsearch stop 2>&1"$end_cmd""
-	echo -e "$VERT" "Elasticsearch started on server-"$num"  [OK]" "$NORMAL"
+	# Elasticsearch stopping
+	echo -e "$VERT" "Elasticsearch stopping on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl stop elasticsearch.service 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl disable elasticsearch.service 2>&1"$end_cmd""
+	echo -e "$VERT" "Elasticsearch stopped on server-"$num"  [OK]" "$NORMAL"
 
-	# Kibana starting
-	echo -e "$VERT" "Kibana starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service kibana stop 2>&1"$end_cmd""
-	echo -e "$VERT" "Kibana started on server-"$num"  [OK]" "$NORMAL"
+	# Kibana stopping
+	echo -e "$VERT" "Kibana stopping on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl stop kibana.service 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl disable kibana.service 2>&1"$end_cmd""
+	echo -e "$VERT" "Kibana stopped on server-"$num"  [OK]" "$NORMAL"
 
 
-	# Nginx starting
-	echo -e "$VERT" "Nginx starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service nginx stop 2>&1"$end_cmd""
-	echo -e "$VERT" "Nginx started on server-"$num"  [OK]" "$NORMAL"
+	# Nginx stopping
+	echo -e "$VERT" "Nginx stopping on server-"$num" ..." "$NORMAL"*
+	eval ""$cmd"sudo systemctl stop nginx.service 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl disable nginx.service 2>&1"$end_cmd""
+	echo -e "$VERT" "Nginx stopped on server-"$num"  [OK]" "$NORMAL"
 
-	# Logstash starting
-	echo -e "$VERT" "Logstash starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service logstash stop 2>&1"$end_cmd""
-	echo -e "$VERT" "Logstash started on server-"$num"  [OK]" "$NORMAL"
+	# Logstash stopping
+	echo -e "$VERT" "Logstash stopping on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl stop logstash.service 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl disable logstash.service 2>&1"$end_cmd""
+	echo -e "$VERT" "Logstash stopped on server-"$num"  [OK]" "$NORMAL"
 
 	# Loading Filebeat
-	echo -e "$VERT" "Filebeat starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service filebeat stop"$end_cmd""
-	echo -e "$VERT" "Filebeat started on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Filebeat stopping on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl stop filebeat.service 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl disable filebeat.service 2>&1"$end_cmd""
+	echo -e "$VERT" "Filebeat stopped on server-"$num"  [OK]" "$NORMAL"
+
+	eval ""$cmd"sudo systemctl reset-failed 2>&1"$end_cmd""
 }
 
 

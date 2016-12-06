@@ -19,37 +19,42 @@ start_stack () {
 	num="1"
 	[[ $# > 0 ]] &&  cmd="ssh -i  ~/.ssh/xnet xnet@server-$1 \"" && end_cmd="\"" && num="$1"
 
+	# Elasticsearch restarting
+	echo -e "$VERT" "Elasticsearch restarting on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl restart elasticsearch  2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl daemon-reload 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl enable elasticsearch  2>&1"$end_cmd""
+	echo -e "$VERT" "Elasticsearch restarted on server-"$num"  [OK]" "$NORMAL"
 
-	# Elasticsearch starting
-	echo -e "$VERT" "Elasticsearch starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service elasticsearch restart 2>&1"$end_cmd""
-	eval ""$cmd"sudo update-rc.d elasticsearch defaults 95 10 2>&1"$end_cmd""
-	echo -e "$VERT" "Elasticsearch started on server-"$num"  [OK]" "$NORMAL"
-
-	# Kibana starting
-	echo -e "$VERT" "Kibana starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo update-rc.d kibana defaults 96 9 2>&1"$end_cmd""
-	eval ""$cmd"sudo service kibana start 2>&1"$end_cmd""
-	echo -e "$VERT" "Kibana started on server-"$num"  [OK]" "$NORMAL"
+	# Kibana restarting
+	echo -e "$VERT" "Kibana restarting on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl restart kibana  2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl daemon-reload 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl enable kibana  2>&1"$end_cmd""
+	echo -e "$VERT" "Kibana restarted on server-"$num"  [OK]" "$NORMAL"
 
 
-	# Nginx starting
-	echo -e "$VERT" "Nginx starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service nginx restart 2>&1"$end_cmd""
-	echo -e "$VERT" "Nginx started on server-"$num"  [OK]" "$NORMAL"
+	# Nginx restarting
+	echo -e "$VERT" "Nginx restarting on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl restart nginx  2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl daemon-reload 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl enable nginx  2>&1"$end_cmd""
+	echo -e "$VERT" "Nginx restarted on server-"$num"  [OK]" "$NORMAL"
 
-	# Logstash starting
-	echo -e "$VERT" "Logstash starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service logstash configtest 2>&1"$end_cmd""
-	eval ""$cmd"sudo service logstash restart 2>&1"$end_cmd""
-	eval ""$cmd"sudo update-rc.d logstash defaults 96 9 2>&1"$end_cmd""
-	echo -e "$VERT" "Logstash started on server-"$num"  [OK]" "$NORMAL"
+	# Logstash restarting
+	echo -e "$VERT" "Logstash restarting on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo /opt/logstash/bin/logstash --configtest -f /etc/logstash/conf.d/ 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl restart logstash  2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl daemon-reload 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl enable logstash  2>&1"$end_cmd""
+	echo -e "$VERT" "Logstash restarted on server-"$num"  [OK]" "$NORMAL"
 
 	# Loading Filebeat
-	echo -e "$VERT" "Filebeat starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service filebeat restart"$end_cmd""
-	eval ""$cmd"sudo update-rc.d filebeat defaults 95 10"$end_cmd""
-	echo -e "$VERT" "Filebeat started on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Filebeat restarting on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo systemctl restart filebeat  2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl daemon-reload 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl enable filebeat  2>&1"$end_cmd""
+	echo -e "$VERT" "Filebeat restarted on server-"$num"  [OK]" "$NORMAL"
 }
 
 
