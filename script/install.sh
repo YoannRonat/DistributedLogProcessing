@@ -77,6 +77,15 @@ installation_stack () {
 	echo -e "$VERT" "Monit installation on server-"$num"  [OK]" "$NORMAL"
 
 	# ZooKeeper Installation
+	zooDir="zookeeper"
+	zoorArchName="zookeeper-3.4.9.tar.gz"
+
+	echo -e "$VERT" "ZooKeeper installation on server-"$num" ..." "$NORMAL"
+	wget "http://apache.crihan.fr/dist/zookeeper/current/"$zoorArchName
+	mkdir $zooDir
+	tar -zxf $zoorArchName -C $zooDir --strip-component 1
+	rm $zoorArchName
+	echo -e "$VERT" "ZooKeeper installation on server-"$num"  [OK]" "$NORMAL"
 }
 
 
