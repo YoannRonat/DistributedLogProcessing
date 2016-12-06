@@ -63,6 +63,10 @@ installation_stack () {
 	eval ""$cmd"yes | sudo apt-get update 2>&1"$end_cmd""
 	eval ""$cmd"yes | sudo apt-get install filebeat --allow-unauthenticated 2>&1"$end_cmd""
 	echo -e "$VERT" "Filebeat Package installation on server-"$num"  [OK]" "$NORMAL"
+
+	# Monit Installation
+
+	# ZooKeeper Installation
 }
 
 
