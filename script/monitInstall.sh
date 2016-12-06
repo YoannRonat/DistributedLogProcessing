@@ -15,8 +15,10 @@ sudo apt-get install monit
 # Configure Monit
 sudo echo "set daemon 60
 
-set eventqueue basedir /var/monit slots 1000
-set mmonit http://admin:swordfish@localhost:8080/collector
+set eventqueue basedir /var/monit slot 1000
+set mmonit http://admin:swordfish@149.202.167.70:8080/collector
+set mmonit http://admin:swordfish@149.202.167.72:8080/collector
+set mmonit http://admin:swordfish@149.202.167.76:8080/collector
 set mailserver localhost
 set alert root@localhost
 set logfile syslog facility log_daemon
