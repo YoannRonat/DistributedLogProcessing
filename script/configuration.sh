@@ -67,7 +67,12 @@ configuration_stack () {
 	echo -e "$VERT" "Monit Configuration on server-"$num" [OK]" "$NORMAL"
 
 	# ZooKeeper configuration
-
+	zooDir="zookeeper"
+	zoorArchName="zookeeper-3.4.9.tar.gz"
+	
+	echo -e "$VERT" "ZooKeeper Configuration on server-"$num"..." "$NORMAL"
+	eval ""$cmd"sudo wget -O ~/$zooDir/$(basename -s .tar.gz "$zooArchName")/conf/zoo.cfg https://gist.githubusercontent.com/Erennor/d67fa0247f607c1fdb3256904804b7dd/raw/2abe981954569927a1db6842d6a6865ba6afe849/zoo.cfg"$end_cmd""
+	echo -e "$VERT" "ZooKeeper Configuration on server-"$num" [OK]" "$NORMAL"
 }
 
 ################# DEPLOYMENT ON SERVER-1 #################
