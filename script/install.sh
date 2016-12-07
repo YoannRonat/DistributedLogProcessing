@@ -81,10 +81,10 @@ installation_stack () {
 	zooArchName="zookeeper-3.4.9.tar.gz"
 
 	echo -e "$VERT" "ZooKeeper installation on server-"$num" ..." "$NORMAL"
-	wget "http://apache.crihan.fr/dist/zookeeper/current/"$zoorArchName
-	mkdir $zooDir
-	tar -zxf $zooArchName -C $zooDir --strip-component 1
-	rm $zooArchName
+	eval ""$cmd"wget http://apache.crihan.fr/dist/zookeeper/current/zookeeper-3.4.9.tar.gz"$end_cmd""
+	eval ""$cmd"mkdir $zooDir"$end_cmd""
+	eval ""$cmd"tar -zxf $zooArchName -C $zooDir --strip-component 1"$end_cmd""
+	eval ""$cmd"rm $zooArchName"$end_cmd""
 	echo -e "$VERT" "ZooKeeper installation on server-"$num"  [OK]" "$NORMAL"
 }
 
