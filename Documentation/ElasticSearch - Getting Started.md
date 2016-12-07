@@ -1,4 +1,4 @@
-ElastikSearch - Getting Started
+ElasticSearch - Getting Started
 ======
 
 
