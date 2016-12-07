@@ -54,7 +54,8 @@ stop_stack () {
 
 	# Stoping Monit
 	echo -e "$VERT" "Monit stoping on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service monit stop 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl stop monit.service 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl disable monit.service 2>&1"$end_cmd""
 	echo -e "$VERT" "Monit stopped on server-"$num"  [OK]" "$NORMAL"
 }
 

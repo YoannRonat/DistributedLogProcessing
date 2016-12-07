@@ -65,7 +65,9 @@ start_stack () {
 
 	# Loading Monit
 	echo -e "$VERT" "Monit starting on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo service monit restart 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl restart monit  2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl daemon-reload 2>&1"$end_cmd""
+	eval ""$cmd"sudo systemctl enable monit  2>&1"$end_cmd""
 	echo -e "$VERT" "Monit started on server-"$num"  [OK]" "$NORMAL"
 }
 
