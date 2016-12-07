@@ -56,9 +56,17 @@ start_stack () {
 	eval ""$cmd"sudo systemctl enable filebeat  2>&1"$end_cmd""
 	echo -e "$VERT" "Filebeat restarted on server-"$num"  [OK]" "$NORMAL"
 
-
 	eval ""$cmd"cd beats-dashboards-* && ./load.sh 2>&1 && cd"$end_cmd""
 
+	# Loading M/Monit
+	echo -e "$VERT" "M/Monit starting on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo ~/mmonit-3.6.2/bin/mmonit start 2>&1"$end_cmd""
+	echo -e "$VERT" "M/Monit started on server-"$num"  [OK]" "$NORMAL"
+
+	# Loading Monit
+	echo -e "$VERT" "Monit starting on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo service monit restart 2>&1"$end_cmd""
+	echo -e "$VERT" "Monit started on server-"$num"  [OK]" "$NORMAL"
 }
 
 

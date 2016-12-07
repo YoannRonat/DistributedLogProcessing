@@ -46,6 +46,16 @@ stop_stack () {
 	echo -e "$VERT" "Filebeat stopped on server-"$num"  [OK]" "$NORMAL"
 
 	eval ""$cmd"sudo systemctl reset-failed 2>&1"$end_cmd""
+
+	# Stoping M/Monit
+	echo -e "$VERT" "M/Monit stoping on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo ~/mmonit-3.6.2/bin/mmonit stop 2>&1"$end_cmd""
+	echo -e "$VERT" "M/Monit stopped on server-"$num"  [OK]" "$NORMAL"
+
+	# Stoping Monit
+	echo -e "$VERT" "Monit stoping on server-"$num" ..." "$NORMAL"
+	eval ""$cmd"sudo service monit stop 2>&1"$end_cmd""
+	echo -e "$VERT" "Monit stopped on server-"$num"  [OK]" "$NORMAL"
 }
 
 

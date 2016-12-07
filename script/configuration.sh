@@ -62,7 +62,7 @@ configuration_stack () {
 
 	# Monit configuration
 	echo -e "$VERT" "Monit Configuration on server-"$num"..." "$NORMAL"
-	eval ""$cmd"sudo wget -O /etc/monit/monitrc https://gist.githubusercontent.com/assoulid/c14335994d31ac2aaafebd8e0667e038/raw/563243e879e21d2916a6eb2279c55e7af6121729/monitrc"$end_cmd""
+	eval ""$cmd"sudo wget -O /etc/monit.d/monitrc https://gist.githubusercontent.com/assoulid/c14335994d31ac2aaafebd8e0667e038/raw/563243e879e21d2916a6eb2279c55e7af6121729/monitrc 2>&1"$end_cmd""
 	echo -e "$VERT" "Monit Configuration on server-"$num" [OK]" "$NORMAL"
 
 	# ZooKeeper configuration
