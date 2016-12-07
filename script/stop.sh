@@ -39,7 +39,7 @@ stop_stack () {
 	eval ""$cmd"sudo systemctl disable logstash.service 2>&1"$end_cmd""
 	echo -e "$VERT" "Logstash stopped on server-"$num"  [OK]" "$NORMAL"
 
-	# Loading Filebeat
+	# Filebeat stopping
 	echo -e "$VERT" "Filebeat stopping on server-"$num" ..." "$NORMAL"
 	eval ""$cmd"sudo systemctl stop filebeat.service 2>&1"$end_cmd""
 	eval ""$cmd"sudo systemctl disable filebeat.service 2>&1"$end_cmd""
