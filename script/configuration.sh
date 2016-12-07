@@ -46,7 +46,6 @@ configuration_stack () {
 	echo -e "$VERT" "Kibana configuration on server-"$num" ..." "$NORMAL"
 	eval ""$cmd"curl -L -O https://download.elastic.co/beats/dashboards/beats-dashboards-1.1.0.zip 2>&1"$end_cmd""
 	eval ""$cmd"unzip beats-dashboards-*.zip 2>&1"$end_cmd""
-	eval ""$cmd"cd beats-dashboards-*; ./load.sh 2>&1; cd"$end_cmd""
 	echo -e "$VERT" "Kibana configuration on server-"$num"  [OK]" "$NORMAL"
 
 	# Loading Filebeat Index Template in Elasticsearch

@@ -55,6 +55,10 @@ start_stack () {
 	eval ""$cmd"sudo systemctl daemon-reload 2>&1"$end_cmd""
 	eval ""$cmd"sudo systemctl enable filebeat  2>&1"$end_cmd""
 	echo -e "$VERT" "Filebeat restarted on server-"$num"  [OK]" "$NORMAL"
+
+
+	eval ""$cmd"cd beats-dashboards-* && ./load.sh 2>&1 && cd"$end_cmd""
+
 }
 
 
