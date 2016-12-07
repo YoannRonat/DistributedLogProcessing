@@ -63,7 +63,7 @@ configuration_stack () {
 
 	# Monit configuration
 	echo -e "$VERT" "Monit Configuration on server-"$num"..." "$NORMAL"
-	eval ""$cmd"sudo wget -O /etc/monit.d/monitrc https://gist.githubusercontent.com/assoulid/c14335994d31ac2aaafebd8e0667e038/raw/563243e879e21d2916a6eb2279c55e7af6121729/monitrc"$end_cmd""
+	eval ""$cmd"sudo wget -O /etc/monit/monitrc https://gist.githubusercontent.com/assoulid/c14335994d31ac2aaafebd8e0667e038/raw/563243e879e21d2916a6eb2279c55e7af6121729/monitrc"$end_cmd""
 	echo -e "$VERT" "Monit Configuration on server-"$num" [OK]" "$NORMAL"
 
 	# ZooKeeper configuration
@@ -71,7 +71,7 @@ configuration_stack () {
 	zooArchName="zookeeper-3.4.9.tar.gz"
 	
 	echo -e "$VERT" "ZooKeeper Configuration on server-"$num"..." "$NORMAL"
-	eval ""$cmd"sudo wget -O ~/$zooDir/$(basename -s .tar.gz "$zooArchName")/conf/zoo.cfg https://gist.githubusercontent.com/Erennor/d67fa0247f607c1fdb3256904804b7dd/raw/2abe981954569927a1db6842d6a6865ba6afe849/zoo.cfg"$end_cmd""
+	eval ""$cmd"sudo wget -O ~/"$zooDir"/conf/zoo.cfg https://gist.githubusercontent.com/Erennor/d67fa0247f607c1fdb3256904804b7dd/raw/2abe981954569927a1db6842d6a6865ba6afe849/zoo.cfg"$end_cmd""
 	echo -e "$VERT" "ZooKeeper Configuration on server-"$num" [OK]" "$NORMAL"
 }
 
