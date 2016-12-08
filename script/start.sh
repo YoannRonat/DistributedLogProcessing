@@ -72,14 +72,6 @@ start_stack () {
 }
 
 
-################# TOOLS INSTALLATION ON SERVER-1 #################
+################# STARTING STACK ON ALL SERVERS ###################
 
-start_stack 
-
-################# DEPLOYMENT ON SERVER-2 #################
-
-start_stack "2"
-
-################## DEPLOYMENT ON SERVER-3 #################
-
-start_stack "3"
+start_stack & start_stack "2" & start_stack "3" & wait

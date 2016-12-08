@@ -59,15 +59,6 @@ stop_stack () {
 	echo -e "$VERT" "Monit stopped on server-"$num"  [OK]" "$NORMAL"
 }
 
+################# STOPPING STACK ON ALL SERVERS ###################
 
-################# TOOLS INSTALLATION ON SERVER-1 #################
-
-stop_stack 
-
-################# DEPLOYMENT ON SERVER-2 #################
-
-stop_stack "2"
-
-################## DEPLOYMENT ON SERVER-3 #################
-
-stop_stack "3"
+stop_stack & stop_stack "2" & stop_stack "3" & wait

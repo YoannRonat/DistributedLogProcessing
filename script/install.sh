@@ -89,34 +89,29 @@ installation_stack () {
 }
 
 
-################# TOOLS INSTALLATION ON SERVER-1 #################
+#################  HOSTS CONFIGURATION ON SERVER-1 #################
 sudo locale-gen fr_FR.UTF-8
 
-# Hosts configurations
 echo -e "$VERT" "Hosts configurations..." "$NORMAL"
 sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-1\n149.202.167.72 server-2\n149.202.167.66 server-3/g' /etc/hosts 2>&1
 echo -e "$VERT" "Hosts configurations [OK]" "$NORMAL"
-installation_stack 
 
-
-################# DEPLOYMENT ON SERVER-2 #################
+################# HOSTS CONFIGURATION ON SERVER-2 #################
 
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo locale-gen fr_FR.UTF-8"
 
-# Hosts configurations on server-2
 echo -e "$VERT" "Hosts configurations on server-2..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-2 "sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-2\n149.202.167.70 server-1\n149.202.167.66 server-3/g' /etc/hosts 2>&1"
 echo -e "$VERT" "Hosts configurations on server-2 [OK]" "$NORMAL"
 
-installation_stack "2"
-
-################## DEPLOYMENT ON SERVER-3 #################
+################## HOSTS CONFIGURATION ON SERVER-3 #################
 
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo locale-gen fr_FR.UTF-8"
 
-# Hosts configurations on server-3
 echo -e "$VERT" "Hosts configurations on server-3..." "$NORMAL"
 ssh -i ~/.ssh/xnet xnet@server-3 "sudo sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost server-3\n149.202.167.70 server-1\n149.202.167.72 server-2/g' /etc/hosts 2>&1"
 echo -e "$VERT" "Hosts configurations on server-3 [OK]" "$NORMAL"
 
-installation_stack "3"
+################## PARALLEL DEPLOYMENT ON ALL SERVERS #################
+
+installation_stack & installation_stack "2" & installation_stack "3" & wait

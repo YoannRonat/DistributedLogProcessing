@@ -74,12 +74,6 @@ configuration_stack () {
 	echo -e "$VERT" "ZooKeeper Configuration on server-"$num" [OK]" "$NORMAL"
 }
 
-################# DEPLOYMENT ON SERVER-1 #################
-configuration_stack
+################# CONFIGURATION ON ON ALL SERVERS ###################
 
-################# DEPLOYMENT ON SERVER-2 #################
-configuration_stack "2"
-
-
-################# DEPLOYMENT ON SERVER-3 #################
-configuration_stack "3"
+configuration_stack & configuration_stack "2" & configuration_stack "3" & wait

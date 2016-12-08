@@ -12,11 +12,12 @@ uninstall_stack() {
 	num="1"
 	[[ $# > 0 ]] &&  cmd="ssh -i  ~/.ssh/xnet xnet@server-$1 \"" && end_cmd="\"" && num="$1"
 
-	pkill nginx; pkill kibana; pkill elasticsearch; pkill filebeat; pkill logstash
+	sudo pkill nginx; sudo pkill kibana; sudo pkill elasticsearch; sudo pkill filebeat; sudo pkill logstash
 	# Remove cache
 	echo -e "$VERT" "Removing cache on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo rm -rf /var/lib/elasticsearch/ /etc/elasticsearch /etc/filebeat /etc/logstash /opt/kibana /etc/apt/sources.list.d/* /var/log/logstash /var/lib/logstash"$end_cmd""
-	eval ""$cmd"sudo wget -O /etc/hosts https://gist.github.com/trussello/4489d8508b73193a2b06fad1a7d0735e/raw"$end_cmd""
+	eval ""$cmd"sudo rm -rf /var/lib/elasticsearch/ /etc/elasticsearch /etc/filebeat /etc/logstash \
+	/opt/kibana /etc/apt/sources.list.d/* /var/log/logstash \
+	/etc/monit /var/monit /var/lib/logstash /var/lib/kibana /var/lib/nginx /var/lib/filebeat"$end_cmd""
 	echo -e "$VERT" "Cache removed on server-"$num"  [OK]" "$NORMAL"
 
 	# Elasticsearch uninstallation
@@ -70,11 +71,11 @@ uninstall_stack() {
 }
 
 ./stop.sh
+
 ################# DEPLOYMENT ON SERVER-3 #################
-uninstall_stack "3"
+uninstall_stack "3" & uninstall_stack "2" & uninstall_stack & wait
 
-################# DEPLOYMENT ON SERVER-2 #################
-uninstall_stack "2"
+for (( i = 3; i >= 1; i-- )); do
+	ssh -i ~/.ssh/xnet xnet@server-"$i" "sudo wget -O /etc/hosts https://gist.github.com/trussello/4489d8508b73193a2b06fad1a7d0735e/raw"
+done
 
-################# DEPLOYMENT ON SERVER-1 #################
-uninstall_stack
