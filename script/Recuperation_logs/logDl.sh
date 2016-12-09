@@ -7,8 +7,7 @@
 SMALLER=$1
 BIGGER=$2
 
-rm -rf /tmp/logs_tf
-mkdir /tmp/logs_tf
+mkdir -p /tmp/logs_tf
 
 # TODO : Optimisation possible ?
 for i in $(seq $SMALLER 1 $BIGGER)
@@ -22,7 +21,7 @@ do
 		wget --quiet -P /tmp/logs_tf http://logs.tf/logs/log_$i.log.zip
 		SUCCESS=$?
 	done
-	unzip /tmp/logs_tf/log_$i.log.zip -d /tmp/logs_tf/
+	unzip -o /tmp/logs_tf/log_$i.log.zip -d /tmp/logs_tf/
 	rm /tmp/logs_tf/log_$i.log.zip
 	# Envoi à serveur1 du fichier reçu
 	ssh -i ~/.ssh/xnet xnet@server-1 "echo $i >> recu.txt"
