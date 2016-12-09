@@ -61,9 +61,9 @@ configuration_stack () {
 	echo -e "$VERT" "Filebeat Configuration on server-"$num" [OK]" "$NORMAL"
 
 	# Monit configuration
-	echo -e "$VERT" "Monit Configuration on server-"$num" [OK]" "$NORMAL"
 	echo -e "$VERT" "Monit Configuration on server-"$num"..." "$NORMAL"
 	eval ""$cmd"sudo wget -O /etc/monit/monitrc https://gist.githubusercontent.com/assoulid/c14335994d31ac2aaafebd8e0667e038/raw/6d064064dfe44091c7baef3c7a77d982621d56f5/monitrc 2>&1"$end_cmd""
+	echo -e "$VERT" "Monit Configuration on server-"$num" [OK]" "$NORMAL"
 
 	# ZooKeeper configuration
 	zooDir="zookeeper"
