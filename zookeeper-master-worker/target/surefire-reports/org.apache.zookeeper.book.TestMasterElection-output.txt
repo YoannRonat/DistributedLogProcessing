@@ -1,0 +1,313 @@
+2016-12-18 17:23:22,905 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2016-12-18 17:23:22,917 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:23:22,964 - INFO  - [Thread-0:Environment@100] - Client environment:zookeeper.version=3.4.8--1, built on 02/06/2016 03:18 GMT
+2016-12-18 17:23:22,964 - INFO  - [Thread-0:Environment@100] - Client environment:host.name=Lenovo-Robin
+2016-12-18 17:23:22,964 - INFO  - [Thread-0:Environment@100] - Client environment:java.version=1.8.0_111
+2016-12-18 17:23:22,964 - INFO  - [Thread-0:Environment@100] - Client environment:java.vendor=Oracle Corporation
+2016-12-18 17:23:22,965 - INFO  - [Thread-0:Environment@100] - Client environment:java.home=/usr/lib/jvm/java-8-oracle/jre
+2016-12-18 17:23:22,967 - INFO  - [Thread-0:Environment@100] - Client environment:java.class.path=/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/test-classes:/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/classes:/home/robin/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar:/home/robin/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/robin/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/robin/.m2/repository/org/apache/zookeeper/zookeeper/3.4.8/zookeeper-3.4.8.jar:/home/robin/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/home/robin/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/home/robin/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/home/robin/.m2/repository/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.jar:/home/robin/.m2/repository/org/apache/curator/curator-recipes/2.1.0-incubating/curator-recipes-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-framework/2.1.0-incubating/curator-framework-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-client/2.1.0-incubating/curator-client-2.1.0-incubating.jar:/home/robin/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:
+2016-12-18 17:23:22,968 - INFO  - [Thread-0:Environment@100] - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2016-12-18 17:23:22,968 - INFO  - [Thread-0:Environment@100] - Client environment:java.io.tmpdir=/tmp
+2016-12-18 17:23:22,971 - INFO  - [Thread-0:Environment@100] - Client environment:java.compiler=<NA>
+2016-12-18 17:23:22,972 - INFO  - [Thread-0:Environment@100] - Client environment:os.name=Linux
+2016-12-18 17:23:22,973 - INFO  - [Thread-0:Environment@100] - Client environment:os.arch=amd64
+2016-12-18 17:23:22,973 - INFO  - [Thread-0:Environment@100] - Client environment:os.version=4.4.0-53-generic
+2016-12-18 17:23:22,973 - INFO  - [Thread-0:Environment@100] - Client environment:user.name=robin
+2016-12-18 17:23:22,974 - INFO  - [Thread-0:Environment@100] - Client environment:user.home=/home/robin
+2016-12-18 17:23:22,983 - INFO  - [Thread-0:Environment@100] - Client environment:user.dir=/home/robin/Travail/SDTD/tests/zookeeper-book-example
+2016-12-18 17:23:22,984 - INFO  - [Thread-0:ZooKeeper@438] - Initiating client connection, connectString=localhost:11221 sessionTimeout=15000 watcher=org.apache.zookeeper.book.Master@4b4d5e1f
+2016-12-18 17:23:23,030 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:23,159 - INFO  - [Standalone server with clientPort:11221:QuorumPeerConfig@103] - Reading configuration from: /tmp/test3307129546198703894.junit.dir/zoo.cfg
+2016-12-18 17:23:23,175 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:23:23,182 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:zookeeper.version=3.4.8--1, built on 02/06/2016 03:18 GMT
+2016-12-18 17:23:23,191 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:host.name=Lenovo-Robin
+2016-12-18 17:23:23,192 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.version=1.8.0_111
+2016-12-18 17:23:23,192 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.vendor=Oracle Corporation
+2016-12-18 17:23:23,192 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-8-oracle/jre
+2016-12-18 17:23:23,192 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.class.path=/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/test-classes:/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/classes:/home/robin/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar:/home/robin/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/robin/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/robin/.m2/repository/org/apache/zookeeper/zookeeper/3.4.8/zookeeper-3.4.8.jar:/home/robin/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/home/robin/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/home/robin/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/home/robin/.m2/repository/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.jar:/home/robin/.m2/repository/org/apache/curator/curator-recipes/2.1.0-incubating/curator-recipes-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-framework/2.1.0-incubating/curator-framework-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-client/2.1.0-incubating/curator-client-2.1.0-incubating.jar:/home/robin/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:
+2016-12-18 17:23:23,193 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2016-12-18 17:23:23,193 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.io.tmpdir=/tmp
+2016-12-18 17:23:23,193 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.compiler=<NA>
+2016-12-18 17:23:23,202 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.name=Linux
+2016-12-18 17:23:23,202 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.arch=amd64
+2016-12-18 17:23:23,203 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.version=4.4.0-53-generic
+2016-12-18 17:23:23,211 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.name=robin
+2016-12-18 17:23:23,214 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.home=/home/robin
+2016-12-18 17:23:23,215 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.dir=/home/robin/Travail/SDTD/tests/zookeeper-book-example
+2016-12-18 17:23:23,295 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:23:23,295 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:23:23,296 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:23:23,311 - INFO  - [Standalone server with clientPort:11221:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11221
+2016-12-18 17:23:23,324 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11221, initiating session
+2016-12-18 17:23:23,328 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:48224
+2016-12-18 17:23:23,336 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:48224
+2016-12-18 17:23:23,338 - WARN  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@213] - Ignoring unexpected runtime exception
+java.lang.NullPointerException
+	at org.apache.zookeeper.server.ZooKeeperServer.createSession(ZooKeeperServer.java:569)
+	at org.apache.zookeeper.server.ZooKeeperServer.processConnectRequest(ZooKeeperServer.java:902)
+	at org.apache.zookeeper.server.NIOServerCnxn.readConnectRequest(NIOServerCnxn.java:418)
+	at org.apache.zookeeper.server.NIOServerCnxn.readPayload(NIOServerCnxn.java:198)
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:244)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:745)
+2016-12-18 17:23:24,348 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:48224
+2016-12-18 17:23:24,353 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:23:24,420 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912beadd60000 with negotiated timeout 15000 for client /127.0.0.1:48224
+2016-12-18 17:23:24,420 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11221, sessionid = 0x15912beadd60000, negotiated timeout = 15000
+2016-12-18 17:23:24,425 - INFO  - [Thread-0-EventThread:Master@153] - Processing event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:23:24,525 - INFO  - [Thread-0:Master@358] - Running for master
+2016-12-18 17:23:24,557 - INFO  - [Thread-0-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:24,558 - INFO  - [Thread-0-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:24,558 - INFO  - [Thread-0-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:24,559 - INFO  - [Thread-0-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:24,560 - INFO  - [Thread-0-EventThread:Master@330] - Going for list of workers
+2016-12-18 17:23:24,575 - INFO  - [Thread-0-EventThread:Master$2@285] - I'm the leader d012e6a9
+2016-12-18 17:23:24,575 - INFO  - [Thread-0-EventThread:Master$8@445] - Succesfully got a list of workers: 0 workers
+2016-12-18 17:23:24,577 - INFO  - [Thread-0-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:23:24,581 - INFO  - [Thread-0-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 0
+2016-12-18 17:23:24,581 - WARN  - [Thread-0-EventThread:RecoveredAssignments$3@161] - Empty list of workers, possibly just starting
+2016-12-18 17:23:24,583 - INFO  - [Thread-0-EventThread:Master$5@338] - Assigning recovered tasks
+2016-12-18 17:23:24,628 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@489] - Processed session termination for sessionid: 0x15912beadd60000
+2016-12-18 17:23:24,643 - INFO  - [Thread-0:ZooKeeper@684] - Session: 0x15912beadd60000 closed
+2016-12-18 17:23:24,643 - INFO  - [Thread-0:ZooKeeper@438] - Initiating client connection, connectString=localhost:11221 sessionTimeout=15000 watcher=org.apache.zookeeper.book.Master@55738fbe
+2016-12-18 17:23:24,644 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:48224 which had sessionid 0x15912beadd60000
+2016-12-18 17:23:24,645 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:24,646 - INFO  - [Thread-0-EventThread:ClientCnxn$EventThread@519] - EventThread shut down for session: 0x15912beadd60000
+2016-12-18 17:23:24,646 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11221, initiating session
+2016-12-18 17:23:24,646 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:48226
+2016-12-18 17:23:24,647 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:48226
+2016-12-18 17:23:24,651 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912beadd60001 with negotiated timeout 15000 for client /127.0.0.1:48226
+2016-12-18 17:23:24,651 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11221, sessionid = 0x15912beadd60001, negotiated timeout = 15000
+2016-12-18 17:23:24,652 - INFO  - [Thread-0-EventThread:Master@153] - Processing event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:23:25,145 - INFO  - [Thread-0:Master@358] - Running for master
+2016-12-18 17:23:25,150 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912beadd60001 type:create cxid:0x1 zxid:0x9 txntype:-1 reqpath:n/a Error Path:/workers Error:KeeperErrorCode = NodeExists for /workers
+2016-12-18 17:23:25,152 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912beadd60001 type:create cxid:0x2 zxid:0xa txntype:-1 reqpath:n/a Error Path:/assign Error:KeeperErrorCode = NodeExists for /assign
+2016-12-18 17:23:25,152 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912beadd60001 type:create cxid:0x3 zxid:0xb txntype:-1 reqpath:n/a Error Path:/tasks Error:KeeperErrorCode = NodeExists for /tasks
+2016-12-18 17:23:25,153 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912beadd60001 type:create cxid:0x4 zxid:0xc txntype:-1 reqpath:n/a Error Path:/status Error:KeeperErrorCode = NodeExists for /status
+2016-12-18 17:23:25,184 - WARN  - [Thread-0-EventThread:Master$1@211] - Parent already registered: /workers
+2016-12-18 17:23:25,192 - WARN  - [Thread-0-EventThread:Master$1@211] - Parent already registered: /assign
+2016-12-18 17:23:25,193 - WARN  - [Thread-0-EventThread:Master$1@211] - Parent already registered: /tasks
+2016-12-18 17:23:25,198 - WARN  - [Thread-0-EventThread:Master$1@211] - Parent already registered: /status
+2016-12-18 17:23:25,198 - INFO  - [Thread-0-EventThread:Master@330] - Going for list of workers
+2016-12-18 17:23:25,198 - INFO  - [Thread-0-EventThread:Master$2@285] - I'm the leader 3a73477
+2016-12-18 17:23:25,200 - INFO  - [Thread-0-EventThread:Master$8@445] - Succesfully got a list of workers: 0 workers
+2016-12-18 17:23:25,200 - INFO  - [Thread-0-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:23:25,203 - INFO  - [Thread-0-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 0
+2016-12-18 17:23:25,203 - WARN  - [Thread-0-EventThread:RecoveredAssignments$3@161] - Empty list of workers, possibly just starting
+2016-12-18 17:23:25,204 - INFO  - [Thread-0-EventThread:Master$5@338] - Assigning recovered tasks
+2016-12-18 17:23:25,248 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@489] - Processed session termination for sessionid: 0x15912beadd60001
+2016-12-18 17:23:25,259 - INFO  - [Thread-0:ZooKeeper@684] - Session: 0x15912beadd60001 closed
+2016-12-18 17:23:25,259 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:48226 which had sessionid 0x15912beadd60001
+2016-12-18 17:23:25,259 - INFO  - [Thread-0-EventThread:ClientCnxn$EventThread@519] - EventThread shut down for session: 0x15912beadd60001
+2016-12-18 17:23:25,260 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:23:25,261 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@469] - shutting down
+2016-12-18 17:23:25,261 - INFO  - [Standalone server with clientPort:11221:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:23:25,261 - INFO  - [Standalone server with clientPort:11221:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:23:25,262 - INFO  - [Standalone server with clientPort:11221:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:23:25,262 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:23:25,262 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:23:25,262 - INFO  - [Standalone server with clientPort:11221:FinalRequestProcessor@415] - shutdown of request processor complete
+2016-12-18 17:23:25,268 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11222
+2016-12-18 17:23:25,269 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:23:25,270 - WARN  - [Standalone server with clientPort:11222:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2016-12-18 17:23:25,271 - INFO  - [Standalone server with clientPort:11222:QuorumPeerConfig@103] - Reading configuration from: /tmp/test8557179917899573657.junit.dir/zoo.cfg
+2016-12-18 17:23:25,272 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:23:25,272 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:23:25,273 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:23:25,273 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:23:25,273 - INFO  - [Standalone server with clientPort:11222:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11222
+2016-12-18 17:23:25,271 - INFO  - [Thread-2:ZooKeeper@438] - Initiating client connection, connectString=localhost:11222 sessionTimeout=15000 watcher=org.apache.zookeeper.book.Master@367f24
+2016-12-18 17:23:25,275 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11222. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:25,276 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11222, initiating session
+2016-12-18 17:23:25,276 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:40428
+2016-12-18 17:23:25,278 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:40428
+2016-12-18 17:23:25,279 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:23:25,309 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912beb55a0000 with negotiated timeout 15000 for client /127.0.0.1:40428
+2016-12-18 17:23:25,309 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11222, sessionid = 0x15912beb55a0000, negotiated timeout = 15000
+2016-12-18 17:23:25,310 - INFO  - [Thread-2-EventThread:Master@153] - Processing event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:23:25,792 - INFO  - [Thread-2-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:25,794 - INFO  - [Thread-2-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:25,800 - INFO  - [Thread-2-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:25,800 - INFO  - [Thread-2-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:25,803 - INFO  - [Thread-2-EventThread:Master@358] - Running for master
+2016-12-18 17:23:25,803 - INFO  - [Thread-2-EventThread:Master$3@308] - It sounds like the previous master is gone, so let's run for master again.
+2016-12-18 17:23:25,810 - INFO  - [Thread-2-EventThread:Master@330] - Going for list of workers
+2016-12-18 17:23:25,810 - INFO  - [Thread-2-EventThread:Master$2@285] - I'm the leader 4997e616
+2016-12-18 17:23:25,811 - INFO  - [Thread-2-EventThread:Master$8@445] - Succesfully got a list of workers: 0 workers
+2016-12-18 17:23:25,812 - INFO  - [Thread-2-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:23:25,813 - INFO  - [Thread-2-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 0
+2016-12-18 17:23:25,814 - WARN  - [Thread-2-EventThread:RecoveredAssignments$3@161] - Empty list of workers, possibly just starting
+2016-12-18 17:23:25,814 - INFO  - [Thread-2-EventThread:Master$5@338] - Assigning recovered tasks
+2016-12-18 17:23:25,981 - INFO  - [ProcessThread(sid:0 cport:11222)::PrepRequestProcessor@489] - Processed session termination for sessionid: 0x15912beb55a0000
+2016-12-18 17:23:25,992 - INFO  - [Thread-2:ZooKeeper@684] - Session: 0x15912beb55a0000 closed
+2016-12-18 17:23:25,992 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:40428 which had sessionid 0x15912beb55a0000
+2016-12-18 17:23:25,992 - INFO  - [Thread-2-EventThread:ClientCnxn$EventThread@519] - EventThread shut down for session: 0x15912beb55a0000
+2016-12-18 17:23:25,993 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:23:25,993 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@469] - shutting down
+2016-12-18 17:23:25,994 - INFO  - [Standalone server with clientPort:11222:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:23:25,994 - INFO  - [Standalone server with clientPort:11222:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:23:25,994 - INFO  - [Standalone server with clientPort:11222:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:23:25,994 - INFO  - [ProcessThread(sid:0 cport:11222)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:23:25,995 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:23:25,996 - INFO  - [Standalone server with clientPort:11222:FinalRequestProcessor@415] - shutdown of request processor complete
+2016-12-18 17:23:25,999 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11223
+2016-12-18 17:23:26,000 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2016-12-18 17:23:26,000 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2016-12-18 17:23:26,001 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:23:26,002 - WARN  - [Standalone server with clientPort:11223:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2016-12-18 17:23:26,002 - INFO  - [Thread-3:ZooKeeper@438] - Initiating client connection, connectString=localhost:11223 sessionTimeout=15000 watcher=org.apache.zookeeper.book.Master@37204a21
+2016-12-18 17:23:26,003 - INFO  - [Standalone server with clientPort:11223:QuorumPeerConfig@103] - Reading configuration from: /tmp/test1744951333012270292.junit.dir/zoo.cfg
+2016-12-18 17:23:26,004 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:23:26,005 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:23:26,005 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:23:26,005 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:23:26,006 - INFO  - [Standalone server with clientPort:11223:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11223
+2016-12-18 17:23:26,005 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11223. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:26,008 - WARN  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1162] - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connexion refusée
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-12-18 17:23:27,110 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11223. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:27,111 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:43732
+2016-12-18 17:23:27,111 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11223, initiating session
+2016-12-18 17:23:27,112 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:43732
+2016-12-18 17:23:27,113 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:23:27,161 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912beb83a0000 with negotiated timeout 15000 for client /127.0.0.1:43732
+2016-12-18 17:23:27,161 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11223, sessionid = 0x15912beb83a0000, negotiated timeout = 15000
+2016-12-18 17:23:27,161 - INFO  - [Thread-3-EventThread:Master@153] - Processing event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:23:27,506 - INFO  - [Thread-3:Master@358] - Running for master
+2016-12-18 17:23:27,526 - INFO  - [Thread-3-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:27,526 - INFO  - [Thread-3-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:27,534 - INFO  - [Thread-3-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:27,534 - INFO  - [Thread-3-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:27,535 - INFO  - [Thread-3-EventThread:Master@330] - Going for list of workers
+2016-12-18 17:23:27,535 - INFO  - [Thread-3-EventThread:Master$2@285] - I'm the leader b6272d01
+2016-12-18 17:23:27,536 - INFO  - [Thread-3-EventThread:Master$8@445] - Succesfully got a list of workers: 0 workers
+2016-12-18 17:23:27,537 - INFO  - [Thread-3-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:23:27,539 - INFO  - [Thread-3-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 0
+2016-12-18 17:23:27,539 - WARN  - [Thread-3-EventThread:RecoveredAssignments$3@161] - Empty list of workers, possibly just starting
+2016-12-18 17:23:27,539 - INFO  - [Thread-3-EventThread:Master$5@338] - Assigning recovered tasks
+2016-12-18 17:23:27,608 - INFO  - [ProcessThread(sid:0 cport:11223)::PrepRequestProcessor@489] - Processed session termination for sessionid: 0x15912beb83a0000
+2016-12-18 17:23:27,617 - INFO  - [Thread-3:ZooKeeper@684] - Session: 0x15912beb83a0000 closed
+2016-12-18 17:23:27,618 - INFO  - [Thread-3-EventThread:ClientCnxn$EventThread@519] - EventThread shut down for session: 0x15912beb83a0000
+2016-12-18 17:23:27,618 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:43732 which had sessionid 0x15912beb83a0000
+2016-12-18 17:23:27,619 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:23:27,619 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@469] - shutting down
+2016-12-18 17:23:27,619 - INFO  - [Standalone server with clientPort:11223:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:23:27,619 - INFO  - [Standalone server with clientPort:11223:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:23:27,620 - INFO  - [Standalone server with clientPort:11223:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:23:27,620 - INFO  - [ProcessThread(sid:0 cport:11223)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:23:27,621 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:23:27,622 - INFO  - [Standalone server with clientPort:11223:FinalRequestProcessor@415] - shutdown of request processor complete
+2016-12-18 17:23:27,625 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11224
+2016-12-18 17:23:27,625 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:23:27,627 - WARN  - [Standalone server with clientPort:11224:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2016-12-18 17:23:27,630 - INFO  - [Standalone server with clientPort:11224:QuorumPeerConfig@103] - Reading configuration from: /tmp/test2047076591012980184.junit.dir/zoo.cfg
+2016-12-18 17:23:27,631 - INFO  - [Thread-4:ZooKeeper@438] - Initiating client connection, connectString=localhost:11224 sessionTimeout=15000 watcher=org.apache.zookeeper.book.Master@116dada1
+2016-12-18 17:23:27,631 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:23:27,632 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:23:27,632 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:23:27,633 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:23:27,634 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11224. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:27,634 - INFO  - [Standalone server with clientPort:11224:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11224
+2016-12-18 17:23:27,635 - INFO  - [Thread-4:ZooKeeper@438] - Initiating client connection, connectString=localhost:11224 sessionTimeout=15000 watcher=org.apache.zookeeper.book.Master@1faa51fc
+2016-12-18 17:23:27,634 - WARN  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1162] - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connexion refusée
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-12-18 17:23:27,696 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11224. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:27,697 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11224, initiating session
+2016-12-18 17:23:27,698 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:41612
+2016-12-18 17:23:27,698 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:41612
+2016-12-18 17:23:27,699 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:23:27,753 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912bebe960000 with negotiated timeout 15000 for client /127.0.0.1:41612
+2016-12-18 17:23:27,753 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11224, sessionid = 0x15912bebe960000, negotiated timeout = 15000
+2016-12-18 17:23:27,754 - INFO  - [Thread-4-EventThread:Master@153] - Processing event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:23:28,000 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2016-12-18 17:23:28,739 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11224. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:23:28,740 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11224, initiating session
+2016-12-18 17:23:28,741 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:41614
+2016-12-18 17:23:28,742 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:41614
+2016-12-18 17:23:28,759 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912bebe960001 with negotiated timeout 15000 for client /127.0.0.1:41614
+2016-12-18 17:23:28,759 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11224, sessionid = 0x15912bebe960001, negotiated timeout = 15000
+2016-12-18 17:23:28,760 - INFO  - [Thread-4-EventThread:Master@153] - Processing event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:23:29,142 - INFO  - [Thread-4:Master@358] - Running for master
+2016-12-18 17:23:29,143 - INFO  - [Thread-4:Master@358] - Running for master
+2016-12-18 17:23:29,145 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bebe960000 type:create cxid:0x1 zxid:0x4 txntype:-1 reqpath:n/a Error Path:/workers Error:KeeperErrorCode = NodeExists for /workers
+2016-12-18 17:23:29,146 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bebe960000 type:create cxid:0x2 zxid:0x6 txntype:-1 reqpath:n/a Error Path:/assign Error:KeeperErrorCode = NodeExists for /assign
+2016-12-18 17:23:29,146 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bebe960000 type:create cxid:0x3 zxid:0x8 txntype:-1 reqpath:n/a Error Path:/tasks Error:KeeperErrorCode = NodeExists for /tasks
+2016-12-18 17:23:29,147 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bebe960000 type:create cxid:0x4 zxid:0xa txntype:-1 reqpath:n/a Error Path:/status Error:KeeperErrorCode = NodeExists for /status
+2016-12-18 17:23:29,147 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bebe960000 type:create cxid:0x5 zxid:0xc txntype:-1 reqpath:n/a Error Path:/master Error:KeeperErrorCode = NodeExists for /master
+2016-12-18 17:23:29,158 - INFO  - [Thread-4-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:29,167 - WARN  - [Thread-4-EventThread:Master$1@211] - Parent already registered: /workers
+2016-12-18 17:23:29,167 - INFO  - [Thread-4-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:29,167 - WARN  - [Thread-4-EventThread:Master$1@211] - Parent already registered: /assign
+2016-12-18 17:23:29,168 - INFO  - [Thread-4-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:29,168 - WARN  - [Thread-4-EventThread:Master$1@211] - Parent already registered: /tasks
+2016-12-18 17:23:29,168 - INFO  - [Thread-4-EventThread:Master$1@207] - Parent created
+2016-12-18 17:23:29,169 - WARN  - [Thread-4-EventThread:Master$1@211] - Parent already registered: /status
+2016-12-18 17:23:29,169 - INFO  - [Thread-4-EventThread:Master@330] - Going for list of workers
+2016-12-18 17:23:29,169 - INFO  - [Thread-4-EventThread:Master$2@285] - I'm not the leader 444ecbb4
+2016-12-18 17:23:29,169 - INFO  - [Thread-4-EventThread:Master$2@285] - I'm the leader 20d04c36
+2016-12-18 17:23:29,172 - INFO  - [Thread-4-EventThread:Master$8@445] - Succesfully got a list of workers: 0 workers
+2016-12-18 17:23:29,172 - INFO  - [Thread-4-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:23:29,174 - INFO  - [Thread-4-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 0
+2016-12-18 17:23:29,174 - WARN  - [Thread-4-EventThread:RecoveredAssignments$3@161] - Empty list of workers, possibly just starting
+2016-12-18 17:23:29,174 - INFO  - [Thread-4-EventThread:Master$5@338] - Assigning recovered tasks
+2016-12-18 17:23:29,245 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@489] - Processed session termination for sessionid: 0x15912bebe960001
+2016-12-18 17:23:29,251 - INFO  - [Thread-4-EventThread:Master@358] - Running for master
+2016-12-18 17:23:29,251 - INFO  - [Thread-4-EventThread:ClientCnxn$EventThread@519] - EventThread shut down for session: 0x15912bebe960001
+2016-12-18 17:23:29,251 - INFO  - [Thread-4:ZooKeeper@684] - Session: 0x15912bebe960001 closed
+2016-12-18 17:23:29,251 - WARN  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxn@357] - caught end of stream exception
+EndOfStreamException: Unable to read additional data from client sessionid 0x15912bebe960001, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:230)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:745)
+2016-12-18 17:23:29,254 - INFO  - [main:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:41614 which had sessionid 0x15912bebe960001
+2016-12-18 17:23:29,256 - INFO  - [main:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:41612 which had sessionid 0x15912bebe960000
+2016-12-18 17:23:29,257 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1158] - Unable to read additional data from server sessionid 0x15912bebe960000, likely server has closed socket, closing socket connection and attempting reconnect
+2016-12-18 17:23:29,257 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:23:29,258 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@469] - shutting down
+2016-12-18 17:23:29,258 - INFO  - [Standalone server with clientPort:11224:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:23:29,258 - INFO  - [Standalone server with clientPort:11224:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:23:29,259 - INFO  - [Standalone server with clientPort:11224:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:23:29,259 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:23:29,259 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:23:29,260 - INFO  - [Standalone server with clientPort:11224:FinalRequestProcessor@415] - shutdown of request processor complete

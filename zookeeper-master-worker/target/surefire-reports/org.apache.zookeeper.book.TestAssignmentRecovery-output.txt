@@ -1,0 +1,291 @@
+2016-12-18 17:24:26,015 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2016-12-18 17:24:26,022 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:24:26,040 - INFO  - [Thread-0:Environment@100] - Client environment:zookeeper.version=3.4.8--1, built on 02/06/2016 03:18 GMT
+2016-12-18 17:24:26,040 - INFO  - [Thread-0:Environment@100] - Client environment:host.name=Lenovo-Robin
+2016-12-18 17:24:26,040 - INFO  - [Thread-0:Environment@100] - Client environment:java.version=1.8.0_111
+2016-12-18 17:24:26,040 - INFO  - [Thread-0:Environment@100] - Client environment:java.vendor=Oracle Corporation
+2016-12-18 17:24:26,041 - INFO  - [Thread-0:Environment@100] - Client environment:java.home=/usr/lib/jvm/java-8-oracle/jre
+2016-12-18 17:24:26,041 - INFO  - [Thread-0:Environment@100] - Client environment:java.class.path=/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/test-classes:/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/classes:/home/robin/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar:/home/robin/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/robin/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/robin/.m2/repository/org/apache/zookeeper/zookeeper/3.4.8/zookeeper-3.4.8.jar:/home/robin/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/home/robin/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/home/robin/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/home/robin/.m2/repository/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.jar:/home/robin/.m2/repository/org/apache/curator/curator-recipes/2.1.0-incubating/curator-recipes-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-framework/2.1.0-incubating/curator-framework-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-client/2.1.0-incubating/curator-client-2.1.0-incubating.jar:/home/robin/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:
+2016-12-18 17:24:26,041 - INFO  - [Thread-0:Environment@100] - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2016-12-18 17:24:26,041 - INFO  - [Thread-0:Environment@100] - Client environment:java.io.tmpdir=/tmp
+2016-12-18 17:24:26,042 - INFO  - [Thread-0:Environment@100] - Client environment:java.compiler=<NA>
+2016-12-18 17:24:26,042 - INFO  - [Thread-0:Environment@100] - Client environment:os.name=Linux
+2016-12-18 17:24:26,042 - INFO  - [Thread-0:Environment@100] - Client environment:os.arch=amd64
+2016-12-18 17:24:26,042 - INFO  - [Thread-0:Environment@100] - Client environment:os.version=4.4.0-53-generic
+2016-12-18 17:24:26,042 - INFO  - [Thread-0:Environment@100] - Client environment:user.name=robin
+2016-12-18 17:24:26,043 - INFO  - [Thread-0:Environment@100] - Client environment:user.home=/home/robin
+2016-12-18 17:24:26,045 - INFO  - [Thread-0:Environment@100] - Client environment:user.dir=/home/robin/Travail/SDTD/tests/zookeeper-book-example
+2016-12-18 17:24:26,055 - INFO  - [Thread-0:ZooKeeper@438] - Initiating client connection, connectString=localhost:11221 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$5@4647d5f9
+2016-12-18 17:24:26,081 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:24:26,111 - INFO  - [Standalone server with clientPort:11221:QuorumPeerConfig@103] - Reading configuration from: /tmp/test1964478134783367015.junit.dir/zoo.cfg
+2016-12-18 17:24:26,112 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:24:26,123 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:zookeeper.version=3.4.8--1, built on 02/06/2016 03:18 GMT
+2016-12-18 17:24:26,124 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:host.name=Lenovo-Robin
+2016-12-18 17:24:26,124 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.version=1.8.0_111
+2016-12-18 17:24:26,124 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.vendor=Oracle Corporation
+2016-12-18 17:24:26,124 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-8-oracle/jre
+2016-12-18 17:24:26,124 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.class.path=/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/test-classes:/home/robin/Travail/SDTD/tests/zookeeper-book-example/target/classes:/home/robin/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar:/home/robin/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/robin/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/robin/.m2/repository/org/apache/zookeeper/zookeeper/3.4.8/zookeeper-3.4.8.jar:/home/robin/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/home/robin/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/home/robin/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/home/robin/.m2/repository/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.jar:/home/robin/.m2/repository/org/apache/curator/curator-recipes/2.1.0-incubating/curator-recipes-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-framework/2.1.0-incubating/curator-framework-2.1.0-incubating.jar:/home/robin/.m2/repository/org/apache/curator/curator-client/2.1.0-incubating/curator-client-2.1.0-incubating.jar:/home/robin/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:
+2016-12-18 17:24:26,125 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2016-12-18 17:24:26,125 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.io.tmpdir=/tmp
+2016-12-18 17:24:26,125 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.compiler=<NA>
+2016-12-18 17:24:26,125 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.name=Linux
+2016-12-18 17:24:26,125 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.arch=amd64
+2016-12-18 17:24:26,125 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.version=4.4.0-53-generic
+2016-12-18 17:24:26,126 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.name=robin
+2016-12-18 17:24:26,126 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.home=/home/robin
+2016-12-18 17:24:26,126 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.dir=/home/robin/Travail/SDTD/tests/zookeeper-book-example
+2016-12-18 17:24:26,136 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:24:26,136 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:24:26,136 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:24:26,154 - INFO  - [Standalone server with clientPort:11221:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11221
+2016-12-18 17:24:26,186 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11221, initiating session
+2016-12-18 17:24:26,186 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:48368
+2016-12-18 17:24:26,196 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:48368
+2016-12-18 17:24:26,197 - WARN  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@213] - Ignoring unexpected runtime exception
+java.lang.NullPointerException
+	at org.apache.zookeeper.server.ZooKeeperServer.createSession(ZooKeeperServer.java:569)
+	at org.apache.zookeeper.server.ZooKeeperServer.processConnectRequest(ZooKeeperServer.java:902)
+	at org.apache.zookeeper.server.NIOServerCnxn.readConnectRequest(NIOServerCnxn.java:418)
+	at org.apache.zookeeper.server.NIOServerCnxn.readPayload(NIOServerCnxn.java:198)
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:244)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
+	at java.lang.Thread.run(Thread.java:745)
+2016-12-18 17:24:27,200 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:48368
+2016-12-18 17:24:27,206 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:24:27,277 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912bfa3540000 with negotiated timeout 10000 for client /127.0.0.1:48368
+2016-12-18 17:24:27,277 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11221, sessionid = 0x15912bfa3540000, negotiated timeout = 10000
+2016-12-18 17:24:27,280 - INFO  - [Thread-0-EventThread:TestAssignmentRecovery$5@196] - Event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:24:27,528 - INFO  - [Thread-0-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:24:27,531 - INFO  - [Thread-0-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 1
+2016-12-18 17:24:27,535 - INFO  - [Thread-0-EventThread:RecoveredAssignments$4@238] - Getting statuses for recovery
+2016-12-18 17:24:27,563 - INFO  - [Thread-0-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /assign/worker-002/task-002
+2016-12-18 17:24:27,563 - INFO  - [Thread-0-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /assign/worker-002
+2016-12-18 17:24:27,564 - INFO  - [Thread-0-EventThread:RecoveredAssignments$8@384] - Processing assignments for recovery
+2016-12-18 17:24:27,564 - INFO  - [Thread-0-EventThread:RecoveredAssignments@397] - Size of tasks: 3
+2016-12-18 17:24:27,564 - INFO  - [Thread-0-EventThread:RecoveredAssignments@400] - Assignment: task-001
+2016-12-18 17:24:27,564 - INFO  - [Thread-0-EventThread:RecoveredAssignments@405] - Size of tasks after assignment filtering: 2
+2016-12-18 17:24:27,565 - INFO  - [Thread-0-EventThread:RecoveredAssignments@412] - Size of tasks after status filtering: 2
+2016-12-18 17:24:27,565 - INFO  - [Thread-0-EventThread:TestAssignmentRecovery$6@228] - Completed recovery: 0
+2016-12-18 17:24:27,571 - INFO  - [Thread-0-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /tasks/task-001
+2016-12-18 17:24:27,625 - INFO  - [main:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:48368 which had sessionid 0x15912bfa3540000
+2016-12-18 17:24:27,626 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:24:27,626 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1158] - Unable to read additional data from server sessionid 0x15912bfa3540000, likely server has closed socket, closing socket connection and attempting reconnect
+2016-12-18 17:24:27,627 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@469] - shutting down
+2016-12-18 17:24:27,627 - INFO  - [Standalone server with clientPort:11221:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:24:27,628 - INFO  - [Standalone server with clientPort:11221:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:24:27,628 - INFO  - [Standalone server with clientPort:11221:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:24:27,628 - INFO  - [ProcessThread(sid:0 cport:11221)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:24:27,628 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:24:27,629 - INFO  - [Standalone server with clientPort:11221:FinalRequestProcessor@415] - shutdown of request processor complete
+2016-12-18 17:24:27,634 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11222
+2016-12-18 17:24:27,635 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:24:27,636 - WARN  - [Standalone server with clientPort:11222:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2016-12-18 17:24:27,636 - INFO  - [Standalone server with clientPort:11222:QuorumPeerConfig@103] - Reading configuration from: /tmp/test2623549111500128728.junit.dir/zoo.cfg
+2016-12-18 17:24:27,637 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:24:27,637 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:24:27,637 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:24:27,638 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:24:27,638 - INFO  - [Standalone server with clientPort:11222:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11222
+2016-12-18 17:24:27,652 - INFO  - [Thread-2:ZooKeeper@438] - Initiating client connection, connectString=localhost:11222 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$3@7ac52c2c
+2016-12-18 17:24:27,654 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11222. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:24:27,654 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11222, initiating session
+2016-12-18 17:24:27,655 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:40570
+2016-12-18 17:24:27,656 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:40570
+2016-12-18 17:24:27,656 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:24:27,722 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912bfa8f70000 with negotiated timeout 10000 for client /127.0.0.1:40570
+2016-12-18 17:24:27,722 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11222, sessionid = 0x15912bfa8f70000, negotiated timeout = 10000
+2016-12-18 17:24:27,723 - INFO  - [Thread-2-EventThread:TestAssignmentRecovery$3@133] - Event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:24:27,728 - INFO  - [Thread-0-EventThread:TestAssignmentRecovery$5@196] - Event: WatchedEvent state:Disconnected type:None path:null
+2016-12-18 17:24:27,889 - INFO  - [Thread-2-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:24:27,892 - INFO  - [Thread-2-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 1
+2016-12-18 17:24:27,893 - INFO  - [Thread-2-EventThread:RecoveredAssignments$4@238] - Getting statuses for recovery
+2016-12-18 17:24:27,896 - INFO  - [ProcessThread(sid:0 cport:11222)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bfa8f70000 type:delete cxid:0x16 zxid:0x12 txntype:-1 reqpath:n/a Error Path:/assign/worker-002 Error:KeeperErrorCode = Directory not empty for /assign/worker-002
+2016-12-18 17:24:27,904 - INFO  - [Thread-2-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /assign/worker-002/task-003
+2016-12-18 17:24:27,913 - ERROR - [Thread-2-EventThread:RecoveredAssignments$7@362] - Failed to delete task dataorg.apache.zookeeper.KeeperException$NotEmptyException: KeeperErrorCode = Directory not empty for /assign/worker-002
+2016-12-18 17:24:27,913 - INFO  - [Thread-2-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /assign/worker-002/task-002
+2016-12-18 17:24:27,913 - INFO  - [Thread-2-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /assign/worker-002
+2016-12-18 17:24:27,913 - INFO  - [Thread-2-EventThread:RecoveredAssignments$8@384] - Processing assignments for recovery
+2016-12-18 17:24:27,914 - INFO  - [Thread-2-EventThread:RecoveredAssignments@397] - Size of tasks: 3
+2016-12-18 17:24:27,914 - INFO  - [Thread-2-EventThread:RecoveredAssignments@400] - Assignment: task-001
+2016-12-18 17:24:27,914 - INFO  - [Thread-2-EventThread:RecoveredAssignments@405] - Size of tasks after assignment filtering: 2
+2016-12-18 17:24:27,916 - INFO  - [Thread-2-EventThread:RecoveredAssignments@408] - Checking task: task-003 
+2016-12-18 17:24:27,917 - INFO  - [Thread-2-EventThread:RecoveredAssignments@408] - Checking task: task-002 
+2016-12-18 17:24:27,917 - INFO  - [Thread-2-EventThread:RecoveredAssignments@412] - Size of tasks after status filtering: 0
+2016-12-18 17:24:27,917 - INFO  - [Thread-2-EventThread:TestAssignmentRecovery$4@168] - Completed recovery: 0
+2016-12-18 17:24:27,921 - INFO  - [Thread-2-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /tasks/task-001
+2016-12-18 17:24:27,929 - INFO  - [Thread-2-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /tasks/task-003
+2016-12-18 17:24:27,929 - INFO  - [Thread-2-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /tasks/task-002
+2016-12-18 17:24:27,989 - INFO  - [main:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:40570 which had sessionid 0x15912bfa8f70000
+2016-12-18 17:24:27,990 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1158] - Unable to read additional data from server sessionid 0x15912bfa8f70000, likely server has closed socket, closing socket connection and attempting reconnect
+2016-12-18 17:24:27,990 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:24:27,990 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@469] - shutting down
+2016-12-18 17:24:27,990 - INFO  - [Standalone server with clientPort:11222:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:24:27,991 - INFO  - [Standalone server with clientPort:11222:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:24:27,991 - INFO  - [Standalone server with clientPort:11222:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:24:27,991 - INFO  - [ProcessThread(sid:0 cport:11222)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:24:27,991 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:24:27,991 - INFO  - [Standalone server with clientPort:11222:FinalRequestProcessor@415] - shutdown of request processor complete
+2016-12-18 17:24:27,994 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11223
+2016-12-18 17:24:27,994 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:24:27,995 - WARN  - [Standalone server with clientPort:11223:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2016-12-18 17:24:27,996 - INFO  - [Standalone server with clientPort:11223:QuorumPeerConfig@103] - Reading configuration from: /tmp/test597783383885093167.junit.dir/zoo.cfg
+2016-12-18 17:24:27,996 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:24:27,996 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:24:27,996 - INFO  - [Thread-3:ZooKeeper@438] - Initiating client connection, connectString=localhost:11223 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$1@4ed48b95
+2016-12-18 17:24:27,996 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:24:27,997 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:24:27,998 - INFO  - [Standalone server with clientPort:11223:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11223
+2016-12-18 17:24:27,998 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11223. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:24:27,999 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11223, initiating session
+2016-12-18 17:24:27,999 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:43872
+2016-12-18 17:24:28,000 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2016-12-18 17:24:28,000 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2016-12-18 17:24:28,000 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:43872
+2016-12-18 17:24:28,002 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:24:28,047 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912bfaa5f0000 with negotiated timeout 10000 for client /127.0.0.1:43872
+2016-12-18 17:24:28,048 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11223, sessionid = 0x15912bfaa5f0000, negotiated timeout = 10000
+2016-12-18 17:24:28,048 - INFO  - [Thread-3-EventThread:TestAssignmentRecovery$1@56] - Event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:24:28,090 - INFO  - [Thread-2-EventThread:TestAssignmentRecovery$3@133] - Event: WatchedEvent state:Disconnected type:None path:null
+2016-12-18 17:24:28,215 - INFO  - [Thread-3-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:24:28,217 - INFO  - [Thread-3-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 1
+2016-12-18 17:24:28,219 - INFO  - [Thread-3-EventThread:RecoveredAssignments$4@238] - Getting statuses for recovery
+2016-12-18 17:24:28,230 - INFO  - [Thread-3-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /assign/worker-002/task-002
+2016-12-18 17:24:28,238 - INFO  - [Thread-3-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /assign/worker-002
+2016-12-18 17:24:28,239 - INFO  - [Thread-3-EventThread:RecoveredAssignments$8@384] - Processing assignments for recovery
+2016-12-18 17:24:28,239 - INFO  - [Thread-3-EventThread:RecoveredAssignments@397] - Size of tasks: 3
+2016-12-18 17:24:28,239 - INFO  - [Thread-3-EventThread:RecoveredAssignments@400] - Assignment: task-001
+2016-12-18 17:24:28,239 - INFO  - [Thread-3-EventThread:RecoveredAssignments@405] - Size of tasks after assignment filtering: 2
+2016-12-18 17:24:28,239 - INFO  - [Thread-3-EventThread:RecoveredAssignments@408] - Checking task: task-001 
+2016-12-18 17:24:28,240 - INFO  - [Thread-3-EventThread:RecoveredAssignments@412] - Size of tasks after status filtering: 2
+2016-12-18 17:24:28,240 - INFO  - [Thread-3-EventThread:TestAssignmentRecovery$2@102] - Completed recovery: 0
+2016-12-18 17:24:28,241 - INFO  - [ProcessThread(sid:0 cport:11223)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bfaa5f0000 type:delete cxid:0x17 zxid:0x12 txntype:-1 reqpath:n/a Error Path:/tasks/task-001 Error:KeeperErrorCode = NoNode for /tasks/task-001
+2016-12-18 17:24:28,246 - INFO  - [Thread-3-EventThread:RecoveredAssignments$7@359] - Task correctly deleted: /tasks/task-001
+2016-12-18 17:24:28,255 - ERROR - [Thread-3-EventThread:RecoveredAssignments$7@362] - Failed to delete task dataorg.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /tasks/task-001
+2016-12-18 17:24:28,315 - INFO  - [main:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:43872 which had sessionid 0x15912bfaa5f0000
+2016-12-18 17:24:28,315 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:24:28,315 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1158] - Unable to read additional data from server sessionid 0x15912bfaa5f0000, likely server has closed socket, closing socket connection and attempting reconnect
+2016-12-18 17:24:28,316 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@469] - shutting down
+2016-12-18 17:24:28,316 - INFO  - [Standalone server with clientPort:11223:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:24:28,316 - INFO  - [Standalone server with clientPort:11223:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:24:28,316 - INFO  - [Standalone server with clientPort:11223:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:24:28,316 - INFO  - [ProcessThread(sid:0 cport:11223)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:24:28,317 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:24:28,317 - INFO  - [Standalone server with clientPort:11223:FinalRequestProcessor@415] - shutdown of request processor complete
+2016-12-18 17:24:28,320 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11224
+2016-12-18 17:24:28,320 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2016-12-18 17:24:28,321 - WARN  - [Standalone server with clientPort:11224:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2016-12-18 17:24:28,322 - INFO  - [Standalone server with clientPort:11224:QuorumPeerConfig@103] - Reading configuration from: /tmp/test550973631806834385.junit.dir/zoo.cfg
+2016-12-18 17:24:28,322 - INFO  - [Thread-4:ZooKeeper@438] - Initiating client connection, connectString=localhost:11224 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$7@2b2c0b1
+2016-12-18 17:24:28,322 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServerMain@95] - Starting server
+2016-12-18 17:24:28,323 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@787] - tickTime set to 2000
+2016-12-18 17:24:28,323 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@796] - minSessionTimeout set to -1
+2016-12-18 17:24:28,323 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11224. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:24:28,324 - WARN  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1162] - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connexion refusée
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-12-18 17:24:28,325 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@805] - maxSessionTimeout set to -1
+2016-12-18 17:24:28,326 - INFO  - [Standalone server with clientPort:11224:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:11224
+2016-12-18 17:24:28,416 - INFO  - [Thread-3-EventThread:TestAssignmentRecovery$1@56] - Event: WatchedEvent state:Disconnected type:None path:null
+2016-12-18 17:24:28,988 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:24:28,989 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1162] - Session 0x15912bfa3540000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connexion refusée
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-12-18 17:24:29,426 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11224. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:24:29,427 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:41754
+2016-12-18 17:24:29,427 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@876] - Socket connection established to localhost/127.0.0.1:11224, initiating session
+2016-12-18 17:24:29,428 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:41754
+2016-12-18 17:24:29,428 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2016-12-18 17:24:29,490 - INFO  - [SyncThread:0:ZooKeeperServer@645] - Established session 0x15912bfaba60000 with negotiated timeout 10000 for client /127.0.0.1:41754
+2016-12-18 17:24:29,490 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1299] - Session establishment complete on server localhost/127.0.0.1:11224, sessionid = 0x15912bfaba60000, negotiated timeout = 10000
+2016-12-18 17:24:29,491 - INFO  - [Thread-4-EventThread:TestAssignmentRecovery$7@259] - Event: WatchedEvent state:SyncConnected type:None path:null
+2016-12-18 17:24:29,631 - INFO  - [Thread-4-EventThread:RecoveredAssignments$1@108] - Getting tasks for recovery
+2016-12-18 17:24:29,634 - INFO  - [Thread-4-EventThread:RecoveredAssignments$3@155] - Getting worker assignments for recovery: 1
+2016-12-18 17:24:29,637 - INFO  - [Thread-4-EventThread:RecoveredAssignments$4@238] - Getting statuses for recovery
+2016-12-18 17:24:29,637 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@651] - Got user-level KeeperException when processing sessionid:0x15912bfaba60000 type:delete cxid:0x12 zxid:0xd txntype:-1 reqpath:n/a Error Path:/assign/worker-002 Error:KeeperErrorCode = Directory not empty for /assign/worker-002
+2016-12-18 17:24:29,682 - ERROR - [Thread-4-EventThread:RecoveredAssignments$7@362] - Failed to delete task dataorg.apache.zookeeper.KeeperException$NotEmptyException: KeeperErrorCode = Directory not empty for /assign/worker-002
+2016-12-18 17:24:29,683 - INFO  - [Thread-4-EventThread:RecoveredAssignments$8@384] - Processing assignments for recovery
+2016-12-18 17:24:29,683 - INFO  - [Thread-4-EventThread:RecoveredAssignments@397] - Size of tasks: 3
+2016-12-18 17:24:29,689 - INFO  - [Thread-4-EventThread:RecoveredAssignments@400] - Assignment: task-001
+2016-12-18 17:24:29,689 - INFO  - [Thread-4-EventThread:RecoveredAssignments@405] - Size of tasks after assignment filtering: 2
+2016-12-18 17:24:29,689 - INFO  - [Thread-4-EventThread:RecoveredAssignments@412] - Size of tasks after status filtering: 2
+2016-12-18 17:24:29,690 - INFO  - [Thread-4-EventThread:TestAssignmentRecovery$8@289] - Completed recovery: 0
+2016-12-18 17:24:29,731 - INFO  - [main:NIOServerCnxn@1008] - Closed socket connection for client /127.0.0.1:41754 which had sessionid 0x15912bfaba60000
+2016-12-18 17:24:29,732 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxnFactory@219] - NIOServerCnxn factory exited run method
+2016-12-18 17:24:29,732 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1158] - Unable to read additional data from server sessionid 0x15912bfaba60000, likely server has closed socket, closing socket connection and attempting reconnect
+2016-12-18 17:24:29,732 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@469] - shutting down
+2016-12-18 17:24:29,732 - INFO  - [Standalone server with clientPort:11224:SessionTrackerImpl@225] - Shutting down
+2016-12-18 17:24:29,732 - INFO  - [Standalone server with clientPort:11224:PrepRequestProcessor@767] - Shutting down
+2016-12-18 17:24:29,733 - INFO  - [Standalone server with clientPort:11224:SyncRequestProcessor@209] - Shutting down
+2016-12-18 17:24:29,733 - INFO  - [ProcessThread(sid:0 cport:11224)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2016-12-18 17:24:29,733 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1032] - Opening socket connection to server localhost/127.0.0.1:11223. Will not attempt to authenticate using SASL (unknown error)
+2016-12-18 17:24:29,734 - WARN  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1162] - Session 0x15912bfaa5f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connexion refusée
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+2016-12-18 17:24:29,741 - ERROR - [SyncThread:0:NIOServerCnxn@178] - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1082)
+	at org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.zookeeper.server.SyncRequestProcessor.run(SyncRequestProcessor.java:131)
+2016-12-18 17:24:29,742 - INFO  - [SyncThread:0:SyncRequestProcessor@187] - SyncRequestProcessor exited!
+2016-12-18 17:24:29,762 - ERROR - [Standalone server with clientPort:11224:NIOServerCnxn@178] - Unexpected Exception: 
+java.nio.channels.CancelledKeyException
+	at sun.nio.ch.SelectionKeyImpl.ensureValid(SelectionKeyImpl.java:73)
+	at sun.nio.ch.SelectionKeyImpl.interestOps(SelectionKeyImpl.java:77)
+	at org.apache.zookeeper.server.NIOServerCnxn.sendBuffer(NIOServerCnxn.java:151)
+	at org.apache.zookeeper.server.NIOServerCnxn.sendResponse(NIOServerCnxn.java:1082)
+	at org.apache.zookeeper.server.FinalRequestProcessor.processRequest(FinalRequestProcessor.java:404)
+	at org.apache.zookeeper.server.SyncRequestProcessor.flush(SyncRequestProcessor.java:200)
+	at org.apache.zookeeper.server.SyncRequestProcessor.shutdown(SyncRequestProcessor.java:216)
+	at org.apache.zookeeper.server.PrepRequestProcessor.shutdown(PrepRequestProcessor.java:770)
+	at org.apache.zookeeper.server.ZooKeeperServer.shutdown(ZooKeeperServer.java:480)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:116)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:86)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2016-12-18 17:24:29,762 - INFO  - [Standalone server with clientPort:11224:FinalRequestProcessor@415] - shutdown of request processor complete
