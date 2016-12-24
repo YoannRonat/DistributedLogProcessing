@@ -20,7 +20,7 @@ private static final Logger LOG = LoggerFactory.getLogger(TestTaskAssignment.cla
     
 
 
-    @Test(timeout=60000)
+    @Test(timeout=600000)
     public void testTaskAssignment() throws Exception {
         LOG.info("Starting master (taskAssignment)");
         CuratorMasterSelector m = new CuratorMasterSelector("M1", "localhost:" + port, 
