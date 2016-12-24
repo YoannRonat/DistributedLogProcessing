@@ -360,16 +360,16 @@ public class Worker implements Watcher, Closeable {
                         //path = "/home/robin/Travail/SDTD/DistributedLogProcessing/script/Recuperation_logs/";
                         String cmd = new String("sh " + path + "getLog.sh " + number);
 
-                        try {
-                            Process proc = Runtime.getRuntime().exec(cmd);
-                            proc.waitFor();
-                            System.out.println(proc.exitValue());
-                        } catch (IOException e) {
+                        //try {
+                        //    Process proc = Runtime.getRuntime().exec(cmd);
+                        //    proc.waitFor();
+                        //    System.out.println(proc.exitValue());
+                        //} catch (IOException e) {
                             // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        //    e.printStackTrace();
+                        //} catch (InterruptedException e) {
+                        //    e.printStackTrace();
+                        //}
 
                         zk.delete("/assign/worker-" + serverId + "/" + (String) ctx,
                                 -1, taskVoidCallback, null);
