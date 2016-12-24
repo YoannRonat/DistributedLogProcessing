@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.apache.zookeeper.book.TestAssignmentRecovery" time="3.759" tests="4" errors="0" skipped="0" failures="0">
+<testsuite name="org.apache.zookeeper.book.TestAssignmentRecovery" time="3.73" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
     <property name="java.vm.version" value="25.111-b14"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/robin/Travail/SDTD/tests/zookeeper-book-example"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/robin/Travail/SDTD/DistributedLogProcessing/zookeeper-master-worker"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/robin/Travail/SDTD/tests/zookeeper-book-example"/>
+    <property name="user.dir" value="/home/robin/Travail/SDTD/DistributedLogProcessing/zookeeper-master-worker"/>
     <property name="java.runtime.version" value="1.8.0_111-b14"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
@@ -58,8 +58,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testRecoveryNoStatus" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="1.629"/>
-  <testcase name="testRecoveryStatus" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="0.36"/>
-  <testcase name="testRecovery" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="0.325"/>
-  <testcase name="testRecoveryMissingTaskFromTasks" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="1.445"/>
+  <testcase name="testRecoveryNoStatus" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="1.559"/>
+  <testcase name="testRecoveryStatus" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="0.352"/>
+  <testcase name="testRecovery" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="1.44"/>
+  <testcase name="testRecoveryMissingTaskFromTasks" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="0.379"/>
 </testsuite>
