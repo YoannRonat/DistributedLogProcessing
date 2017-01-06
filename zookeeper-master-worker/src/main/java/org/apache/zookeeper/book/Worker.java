@@ -355,7 +355,7 @@ public class Worker implements Watcher, Closeable {
                         String number = new String(data);
                         System.out.println(number);
 
-                        //TODO : execute the command cmd
+                        //execute the command cmd
                         String path = new String("/home/xnet/");
                         //path = "/home/robin/Travail/SDTD/DistributedLogProcessing/script/Recuperation_logs/";
                         String cmd = new String("sh " + path + "getLog.sh " + number);
