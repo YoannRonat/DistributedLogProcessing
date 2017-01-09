@@ -86,6 +86,29 @@ installation_stack () {
 	eval ""$cmd"tar -zxf $zooArchName -C $zooDir --strip-component 1"$end_cmd""
 	eval ""$cmd"rm $zooArchName"$end_cmd""
 	echo -e "$VERT" "ZooKeeper installation on server-"$num"  [OK]" "$NORMAL"
+
+	# Svn installation
+	# TODO : A mettre dans install.sh
+	echo -e "$VERT" "Subversion installation on server-"$num"..." "$NORMAL"
+	eval ""$cmd"sudo apt-get -y install subversion"$end_cmd""
+	echo -e "$VERT" "Subversion installation on server-"$num" [OK]" "$NORMAL"
+
+	# Zookeeper-master-worker installation
+	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num"..." "$NORMAL"
+	eval ""$cmd"sudo rm -rf zookeeper-master-worker"$end_cmd""
+	eval ""$cmd"svn checkout https://github.com/YoannRonat/DistributedLogProcessing/trunk/zookeeper-master-worker"$end_cmd""
+	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num" [OK]" "$NORMAL"
+
+	# Maven installation
+	echo -e "$VERT" "Maven installation on server-"$num"..." "$NORMAL"
+	eval ""$cmd"sudo apt-get -y install maven"$end_cmd""
+	echo -e "$VERT" "Maven installation on server-"$num" [OK]" "$NORMAL"
+
+	# Zookeeper-master-worker compilation
+	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num"..." "$NORMAL"
+	eval ""$cmd"cd zookeeper-master-worker && mvn install && cd"$end_cmd""
+	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num" [OK]" "$NORMAL"
+
 }
 
 

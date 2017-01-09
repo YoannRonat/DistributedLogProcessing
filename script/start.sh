@@ -71,7 +71,38 @@ start_stack () {
 	echo -e "$VERT" "Monit started on server-"$num"  [OK]" "$NORMAL"
 }
 
+zookeeper_start_master() {
+
+	# These variables allow us to use ssh or not depending on the server
+	cmd=""
+	end_cmd=""
+	num="1"
+	[[ $# > 0 ]] &&  cmd="ssh -i  ~/.ssh/xnet xnet@server-$1 \"" && end_cmd="\"" && num="$1"
+
+
+	# Lancement du daemon zookeeper sur le master
+	eval ""$cmd"sudo $zooDir/bin/zkServer.sh start"$end_cmd""
+
+	echo -e "$VERT" "Lancement du Master-Worker sur server-"$num"..." "$NORMAL"
+	eval ""$cmd"cd zookeeper-master-worker && java -cp .:/home/xnet/zookeeper/zookeeper-3.4.9.jar:/home/xnet/zookeeper/lib/slf4j-api-1.6.1.jar:/home/xnet/zookeeper/lib/slf4j-log4j12-1.6.1.jar:/home/xnet/zookeeper/lib/log4j-1.2.16.jar:/home/xnet/zookeeper-master-worker/target/ZooKeeper-Book-0.0.1-SNAPSHOT.jar org.apache.zookeeper.book.Master server-1:2181"$end_cmd""
+	echo -e "$VERT" "Lancement du Master-Worker sur server-"$num" [OK]" "$NORMAL"
+}
+
+zookeeper_start_worker() {
+
+	# These variables allow us to use ssh or not depending on the server
+	cmd=""
+	end_cmd=""
+	num="1"
+	[[ $# > 0 ]] &&  cmd="ssh -i  ~/.ssh/xnet xnet@server-$1 \"" && end_cmd="\"" && num="$1"
+
+	echo -e "$VERT" "Lancement du Master-Worker sur server-"$num"..." "$NORMAL"
+	eval ""$cmd"cd zookeeper-master-worker && java -cp .:/home/xnet/zookeeper/zookeeper-3.4.9.jar:/home/xnet/zookeeper/lib/slf4j-api-1.6.1.jar:/home/xnet/zookeeper/lib/slf4j-log4j12-1.6.1.jar:/home/xnet/zookeeper/lib/log4j-1.2.16.jar:/home/xnet/zookeeper-master-worker/target/ZooKeeper-Book-0.0.1-SNAPSHOT.jar org.apache.zookeeper.book.Worker server-1:2181"$end_cmd""
+	echo -e "$VERT" "Lancement du Master-Worker sur server-"$num" [OK]" "$NORMAL"
+}
 
 ################# STARTING STACK ON ALL SERVERS ###################
 
 start_stack & start_stack "2" & start_stack "3" & wait
+zookeeper_start_master "1" &
+zookeeper_start_worker "2" & zookeeper_start_worker "3" & wait

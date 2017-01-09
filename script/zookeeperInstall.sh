@@ -53,10 +53,10 @@ zookeeper_start_master() {
 
 	
 	# Lancement du daemon zookeeper sur le master
-	eval ""$cmd"sudo sh $zooDir/bin/zkServer.sh"$end_cmd""
-	
+	eval ""$cmd"sudo $zooDir/bin/zkServer.sh start"$end_cmd""
+	eval ""$cmd"sleep 5"$end_cmd""
 	echo -e "$VERT" "Lancement du Master-Worker sur server-"$num"..." "$NORMAL"
-	eval ""$cmd"cd zookeeper-master-worker && java -cp .:/home/xnet/zookeeper/zookeeper-3.4.9.jar:/home/xnet/zookeeper/lib/slf4j-api-1.6.1.jar:/home/xnet/zookeeper/lib/slf4j-log4j12-1.6.1.jar:/home/xnet/zookeeper/lib/log4j-1.2.16.jar:/home/xnet/zookeeper-master-worker/target/ZooKeeper-Book-0.0.1-SNAPSHOT.jar org.apache.zookeeper.book.Master server-1:2181"$end_cmd""
+	eval ""$cmd"cd zookeeper-master-worker && java -cp .:/home/xnet/zookeeper/zookeeper-3.4.9.jar:/home/xnet/zookeeper/lib/slf4j-api-1.6.1.jar:/home/xnet/zookeeper/lib/slf4j-log4j12-1.6.1.jar:/home/xnet/zookeeper/lib/log4j-1.2.16.jar:/home/xnet/zookeeper-master-worker/target/ZooKeeper-Book-0.0.1-SNAPSHOT.jar org.apache.zookeeper.book.Master server-1:2181 &"$end_cmd""
 	echo -e "$VERT" "Lancement du Master-Worker sur server-"$num" [OK]" "$NORMAL"
 }
 
@@ -75,9 +75,10 @@ zookeeper_start_worker() {
 
 zookeeper_configuration "1" & zookeeper_configuration "2" & zookeeper_configuration "3" & wait
 
-zookeeper_start_master "1" &
+zookeeper_start_master "1"
+
 zookeeper_start_worker "2" &
-zookeeper_start_worker "3" & # wait
+zookeeper_start_worker "3" &
 
 # cd
 # ./zookeeper/bin/zkServer.sh
