@@ -82,33 +82,11 @@ installation_stack () {
 
 	echo -e "$VERT" "ZooKeeper installation on server-"$num" ..." "$NORMAL"
 	eval ""$cmd"wget http://apache.crihan.fr/dist/zookeeper/current/zookeeper-3.4.9.tar.gz"$end_cmd""
-	eval ""$cmd"mkdir $zooDir"$end_cmd""
+	eval ""$cmd"mkdir -p "$zooDir" && cd "$zooDir" && mkdir -p data && cd"$end_cmd""
+
 	eval ""$cmd"tar -zxf $zooArchName -C $zooDir --strip-component 1"$end_cmd""
-	eval ""$cmd"rm $zooArchName"$end_cmd""
+	eval ""$cmd"rm "$zooArchName""$end_cmd""
 	echo -e "$VERT" "ZooKeeper installation on server-"$num"  [OK]" "$NORMAL"
-
-	# Svn installation
-	# TODO : A mettre dans install.sh
-	echo -e "$VERT" "Subversion installation on server-"$num"..." "$NORMAL"
-	eval ""$cmd"sudo apt-get -y install subversion"$end_cmd""
-	echo -e "$VERT" "Subversion installation on server-"$num" [OK]" "$NORMAL"
-
-	# Zookeeper-master-worker installation
-	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num"..." "$NORMAL"
-	eval ""$cmd"sudo rm -rf zookeeper-master-worker"$end_cmd""
-	eval ""$cmd"svn checkout https://github.com/YoannRonat/DistributedLogProcessing/trunk/zookeeper-master-worker"$end_cmd""
-	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num" [OK]" "$NORMAL"
-
-	# Maven installation
-	echo -e "$VERT" "Maven installation on server-"$num"..." "$NORMAL"
-	eval ""$cmd"sudo apt-get -y install maven"$end_cmd""
-	echo -e "$VERT" "Maven installation on server-"$num" [OK]" "$NORMAL"
-
-	# Zookeeper-master-worker compilation
-	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num"..." "$NORMAL"
-	eval ""$cmd"cd zookeeper-master-worker && mvn install && cd"$end_cmd""
-	echo -e "$VERT" "Zookeeper-master-worker installation on server-"$num" [OK]" "$NORMAL"
-
 }
 
 
@@ -138,3 +116,5 @@ echo -e "$VERT" "Hosts configurations on server-3 [OK]" "$NORMAL"
 ################## PARALLEL DEPLOYMENT ON ALL SERVERS #################
 
 installation_stack & installation_stack "2" & installation_stack "3" & wait
+scp -i ~/.ssh/xnet ZooKeeper-Book.jar xnet@server-2:~
+scp -i ~/.ssh/xnet ZooKeeper-Book.jar xnet@server-3:~
