@@ -42,7 +42,7 @@ uninstall_stack() {
 
 	# Removing Kibana Dashboards
 	echo -e "$VERT" "Kibana uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"rm -rf beats-dashboards-* 2>&1"$end_cmd""
+	eval ""$cmd"sudo rm -rf beats-dashboards-* 2>&1"$end_cmd""
 	echo -e "$VERT" "Kibana uninstallation on server-"$num"  [OK]" "$NORMAL"
 
 	# Filebeat uninstallation
@@ -54,7 +54,7 @@ uninstall_stack() {
 
 	# M/Monit uninstallation
 	echo -e "$VERT" "M/Monit uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"rm -rf ~/mmonit-3.6.2 2>&1"$end_cmd""
+	eval ""$cmd"sudo rm -rf ~/mmonit-3.6.2 2>&1"$end_cmd""
 	echo -e "$VERT" "M/Monit uninstallation on server-"$num"  [OK]" "$NORMAL"
 
 	# Monit uninstallation
@@ -64,7 +64,7 @@ uninstall_stack() {
 	
 	# ZooKeeper uninstallation
 	echo -e "$VERT" "ZooKeeper uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"rm -rf ~/zookeeper"$end_cmd""
+	eval ""$cmd"sudo rm -rf ~/zookeeper"$end_cmd""
 	echo -e "$VERT" "ZooKeeper uninstallation  on server-"$num"  [OK]" "$NORMAL"
 
 	eval ""$cmd"yes | sudo apt-get autoremove 2>&1"$end_cmd""

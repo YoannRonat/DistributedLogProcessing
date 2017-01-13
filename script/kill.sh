@@ -15,7 +15,7 @@ kill_process () {
 	end_cmd="\""
 	num="$1"
 
-	eval ""$cmd"sudo systemctl kill -s 9 "$2".service"$end_cmd""
+	eval ""$cmd"sudo systemctl stop "$2".service"$end_cmd""
 }
 
 kill_process "$1" "$2"
