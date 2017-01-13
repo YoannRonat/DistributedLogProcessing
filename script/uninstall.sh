@@ -6,76 +6,72 @@ NORMAL="\\033[0;39m"
 ################# Function definition ###################
 
 uninstall_stack() {
-	# These variables allow us to use ssh or not depending on the server
-	cmd=""
-	end_cmd=""
-	num="1"
-	[[ $# > 0 ]] &&  cmd="ssh -i  ~/.ssh/xnet xnet@server-$1 \"" && end_cmd="\"" && num="$1"
 
-	sudo pkill nginx; sudo pkill kibana; sudo pkill elasticsearch; sudo pkill filebeat; sudo pkill logstash
+	#ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo pkill kibana; sudo pkill nginx; sudo pkill elasticsearch; sudo pkill filebeat; sudo pkill logstash; sudo pkill java > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "ps ax | grep -E '(kibana|nginx|elasticsearch|filebeat|logstash|java)' | awk -F ' ' '{print \$1}' | xargs sudo kill -9 > /dev/null"
 	# Remove cache
-	echo -e "$VERT" "Removing cache on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo rm -rf /var/lib/elasticsearch/ /etc/elasticsearch /etc/filebeat /etc/logstash \
+	echo -e "$VERT" "Removing cache on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo rm -rf /var/lib/elasticsearch/ /etc/elasticsearch /etc/filebeat /etc/logstash \
 	/opt/kibana /etc/apt/sources.list.d/* /var/log/logstash \
-	/etc/monit /var/monit /var/lib/logstash /var/lib/kibana /var/lib/nginx /var/lib/filebeat"$end_cmd""
-	echo -e "$VERT" "Cache removed on server-"$num"  [OK]" "$NORMAL"
+	/etc/monit /var/monit /var/lib/logstash /var/lib/kibana /var/lib/nginx /var/lib/filebeat > /dev/null"
+	echo -e "$VERT" "Cache removed on server-"$1"  [OK]" "$NORMAL"
 
 	# Elasticsearch uninstallation
-	echo -e "$VERT" "Elasticsearch uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"yes | sudo apt-get -y remove --purge elasticsearch 2>&1"$end_cmd""
-	echo -e "$VERT" "Elasticsearch uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Elasticsearch uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get -y remove --purge elasticsearch > /dev/null"
+	echo -e "$VERT" "Elasticsearch uninstallation on server-"$1"  [OK]" "$NORMAL"
 
 	# Kibana uninstallation
-	echo -e "$VERT" "Kibana uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"yes | sudo apt-get -y remove --purge kibana 2>&1"$end_cmd""
-	echo -e "$VERT" "Kibana uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Kibana uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get -y remove --purge kibana > /dev/null"
+	echo -e "$VERT" "Kibana uninstallation on server-"$1"  [OK]" "$NORMAL"
 
 	# Nginx uninstallation
-	echo -e "$VERT" "Nginx uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"yes | sudo apt-get remove --purge nginx apache2-utils 2>&1"$end_cmd""
-	echo -e "$VERT" "Nginx uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Nginx uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get remove --purge nginx apache2-utils > /dev/null"
+	echo -e "$VERT" "Nginx uninstallation on server-"$1"  [OK]" "$NORMAL"
 
 	# Logstash uninstallation
-	echo -e "$VERT" "Logstash uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"yes | sudo apt-get remove --purge logstash 2>&1"$end_cmd""
-	echo -e "$VERT" "Logstash uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Logstash uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get remove --purge logstash > /dev/null"
+	echo -e "$VERT" "Logstash uninstallation on server-"$1"  [OK]" "$NORMAL"
 
 	# Removing Kibana Dashboards
-	echo -e "$VERT" "Kibana uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo rm -rf beats-dashboards-* 2>&1"$end_cmd""
-	echo -e "$VERT" "Kibana uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Kibana uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo rm -rf beats-dashboards-* > /dev/null"
+	echo -e "$VERT" "Kibana uninstallation on server-"$1"  [OK]" "$NORMAL"
 
 	# Filebeat uninstallation
-	echo -e "$VERT" "Filebeat Package uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"yes | sudo apt-get remove --purge filebeat 2>&1"$end_cmd""
-	echo -e "$VERT" "Filebeat Package uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Filebeat Package uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get remove --purge filebeat > /dev/null"
+	echo -e "$VERT" "Filebeat Package uninstallation on server-"$1"  [OK]" "$NORMAL"
 
-	eval ""$cmd"rm ~/filebeat-index-template.json 2>&1"$end_cmd""
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "rm ~/filebeat-index-template.json > /dev/null"
 
 	# M/Monit uninstallation
-	echo -e "$VERT" "M/Monit uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo rm -rf ~/mmonit-3.6.2 2>&1"$end_cmd""
-	echo -e "$VERT" "M/Monit uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "M/Monit uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo rm -rf ~/mmonit-3.6.2 > /dev/null"
+	echo -e "$VERT" "M/Monit uninstallation on server-"$1"  [OK]" "$NORMAL"
 
 	# Monit uninstallation
-	echo -e "$VERT" "Monit uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"yes | sudo apt-get remove --purge monit 2>&1"$end_cmd""
-	echo -e "$VERT" "Monit uninstallation on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "Monit uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get remove --purge monit > /dev/null"
+	echo -e "$VERT" "Monit uninstallation on server-"$1"  [OK]" "$NORMAL"
 	
 	# ZooKeeper uninstallation
-	echo -e "$VERT" "ZooKeeper uninstallation on server-"$num" ..." "$NORMAL"
-	eval ""$cmd"sudo rm -rf ~/zookeeper"$end_cmd""
-	echo -e "$VERT" "ZooKeeper uninstallation  on server-"$num"  [OK]" "$NORMAL"
+	echo -e "$VERT" "ZooKeeper uninstallation on server-"$1" ..." "$NORMAL"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo rm -rf ~/zookeeper > /dev/null"
+	echo -e "$VERT" "ZooKeeper uninstallation  on server-"$1"  [OK]" "$NORMAL"
 
-	eval ""$cmd"yes | sudo apt-get autoremove 2>&1"$end_cmd""
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get autoremove > /dev/null"
 }
 
 ./stop.sh
 
 ################# DEPLOYMENT ON SERVER-3 #################
-uninstall_stack "3" & uninstall_stack "2" & uninstall_stack & wait
+uninstall_stack "3" & uninstall_stack "2" & uninstall_stack "1" & wait
 
 for (( i = 3; i >= 1; i-- )); do
-	ssh -i ~/.ssh/xnet xnet@server-"$i" "sudo wget -O /etc/hosts https://gist.github.com/trussello/4489d8508b73193a2b06fad1a7d0735e/raw"
+	ssh -i ~/.ssh/xnet xnet@server-"$i" "sudo wget -O /etc/hosts https://gist.github.com/trussello/4489d8508b73193a2b06fad1a7d0735e/raw > /dev/null" &
 done
 

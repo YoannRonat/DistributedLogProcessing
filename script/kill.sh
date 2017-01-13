@@ -10,12 +10,7 @@ fi
 ################# Function definition ###################
 
 kill_process () {
-	# These variables allow us to use ssh or not depending on the server
-	cmd="ssh -i  ~/.ssh/xnet xnet@server-$1 \""
-	end_cmd="\""
-	num="$1"
-
-	eval ""$cmd"sudo systemctl stop "$2".service"$end_cmd""
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo systemctl stop "$2".service > /dev/null"
 }
 
 kill_process "$1" "$2"
