@@ -55,7 +55,7 @@ configuration_stack () {
 
 	# Monit configuration
 	echo -e "$VERT" "Monit Configuration on server-"$1"..." "$NORMAL"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/monit/monitrc https://gist.githubusercontent.com/assoulid/c14335994d31ac2aaafebd8e0667e038/raw/6d064064dfe44091c7baef3c7a77d982621d56f5/monitrc > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/monit/monitrc https://gist.github.com/trussello/121acba2aaabdd675ee19d9b86224fb5/raw > /dev/null"
 	echo -e "$VERT" "Monit Configuration on server-"$1" [OK]" "$NORMAL"
 
 	# ZooKeeper configuration
@@ -65,7 +65,7 @@ configuration_stack () {
 	echo -e "$VERT" "ZooKeeper Configuration on server-"$1"..." "$NORMAL"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O ~/"$zooDir"/conf/zoo.cfg https://gist.githubusercontent.com/trussello/6c906bd8e869c222a49cece300322eaa/raw/968d55e6fb68c64088151cdd51eb133350519f88/zoo.cfg > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sed -i 's/server-"$1":/0.0.0.0:/' ~/"$zooDir"/conf/zoo.cfg > /dev/null"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "echo '"$1"' > ~/zookeeper/data/myid > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "echo '$1' > ~/zookeeper/data/myid"
 	echo -e "$VERT" "ZooKeeper Configuration on server-"$1" [OK]" "$NORMAL"
 }
 
