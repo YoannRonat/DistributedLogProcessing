@@ -65,7 +65,7 @@ configuration_stack () {
 	echo -e "$VERT" "ZooKeeper Configuration on server-"$1"..." "$NORMAL"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O ~/"$zooDir"/conf/zoo.cfg https://gist.githubusercontent.com/trussello/6c906bd8e869c222a49cece300322eaa/raw/968d55e6fb68c64088151cdd51eb133350519f88/zoo.cfg > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sed -i 's/server-"$1":/0.0.0.0:/' ~/"$zooDir"/conf/zoo.cfg > /dev/null"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "echo '"$1"' > ~/zookeeper/data/myid.pid > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "echo '"$1"' > ~/zookeeper/data/myid > /dev/null"
 	echo -e "$VERT" "ZooKeeper Configuration on server-"$1" [OK]" "$NORMAL"
 }
 
