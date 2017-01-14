@@ -8,7 +8,6 @@ NORMAL="\\033[0;39m"
 uninstall_stack() {
 
 	#ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo pkill kibana; sudo pkill nginx; sudo pkill elasticsearch; sudo pkill filebeat; sudo pkill logstash; sudo pkill java > /dev/null"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "ps ax | grep -E '(kibana|nginx|elasticsearch|filebeat|logstash|java)' | awk -F ' ' '{print \$1}' | xargs sudo kill -9 > /dev/null"
 	# Remove cache
 	echo -e "$VERT" "Removing cache on server-"$1" ..." "$NORMAL"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo rm -rf /var/lib/elasticsearch/ /etc/elasticsearch /etc/filebeat /etc/logstash \

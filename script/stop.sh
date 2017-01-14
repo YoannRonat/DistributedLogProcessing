@@ -50,6 +50,9 @@ stop_stack () {
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo systemctl stop monit.service > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo systemctl disable monit.service > /dev/null"
 	echo -e "$VERT" "Monit stopped on server-"$1"  [OK]" "$NORMAL"
+
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "ps ax | grep -E '(kibana|nginx|elasticsearch|filebeat|logstash|java)' | awk -F ' ' '{print \$1}' | xargs sudo kill -9 > /dev/null"
+
 }
 
 ################# STOPPING STACK ON ALL SERVERS ###################
