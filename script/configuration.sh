@@ -10,12 +10,12 @@ configuration_stack () {
 
 	# Elasticsearch configuration
 	echo -e "$VERT" "Elasticsearch configuration on server-"$1" ..." "$NORMAL"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/elasticsearch/elasticsearch.yml https://gist.githubusercontent.com/trussello/d401cf10782e3d42670d5ca4ced7dc53/raw > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/elasticsearch/elasticsearch.yml https://gist.githubusercontent.com/trussello/d401cf10782e3d42670d5ca4ced7dc53/raw/7a8cf2340adb136b690279117b576b3b85e2d3a5/elasticsearch.yml > /dev/null"
 	echo -e "$VERT" "Elasticsearch configuration on server-"$1"  [OK]" "$NORMAL"
 
 	# Kibana configuration
 	echo -e "$VERT" "Kibana configuration on server-"$1" ..." "$NORMAL"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /opt/kibana/config/kibana.yml  https://gist.github.com/trussello/0a4d0f4aad20b0edcae7b9ee141a2b06/raw > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /opt/kibana/config/kibana.yml  https://gist.githubusercontent.com/trussello/0a4d0f4aad20b0edcae7b9ee141a2b06/raw/afa7d55d3069c5f2e0c84348b086251718974d17/kibana.yml > /dev/null"
 	echo -e "$VERT" "Kibana configuration on server-"$1"  [OK]" "$NORMAL"
 
 	# Nginx configuration
@@ -31,7 +31,7 @@ configuration_stack () {
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo mkdir -p /etc/pki/tls/private > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "cd /etc/pki/tls; sudo openssl req -subj '/CN=localhost/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt > /dev/null;cd"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/logstash/conf.d/02-beats-input.conf https://gist.github.com/trussello/b44264fe9a1616f51a21f2ef4baec9bb/raw > /dev/null"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/logstash/conf.d/10-syslog-filter.conf https://gist.githubusercontent.com/trussello/16662bc7d036b03c3616fbbfeb045398/raw/e0bdf27904edc4751e52287e3f7c8ce8efe7d925/10-syslog-filter.conf > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/logstash/conf.d/10-syslog-filter.conf https://gist.githubusercontent.com/trussello/16662bc7d036b03c3616fbbfeb045398/raw/8924d0256e77fc6db3b5f09dc1d1b40b55f85dfd/10-syslog-filter.conf > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo mkdir -p /etc/logstash/conf.d/patterns > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/logstash/conf.d/patterns/pattern https://gist.githubusercontent.com/trussello/52276d1ec08a7236bf205ee2629484d0/raw/c641c2f2c38674c93b9d89cc0eec1d2388444a6e/pattern > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/logstash/conf.d/30-elasticsearch-output.conf https://gist.githubusercontent.com/trussello/aa3da75b1203f87f6bd5b1deb5a7bcf1/raw/689741043c51d001e43537d11ec7d2cab38212d8/30-elasticsearch-output.conf > /dev/null"
@@ -57,7 +57,7 @@ configuration_stack () {
 
 	# Monit configuration
 	echo -e "$VERT" "Monit Configuration on server-"$1"..." "$NORMAL"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/monit/monitrc https://gist.github.com/trussello/121acba2aaabdd675ee19d9b86224fb5/raw > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/monit/monitrc https://gist.githubusercontent.com/trussello/121acba2aaabdd675ee19d9b86224fb5/raw/da24136e8b75755f37a438c77d8300253da23e42/monitrc > /dev/null"
 	echo -e "$VERT" "Monit Configuration on server-"$1" [OK]" "$NORMAL"
 
 	# ZooKeeper configuration

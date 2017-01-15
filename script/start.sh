@@ -64,8 +64,8 @@ start_stack () {
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo systemctl enable monit  > /dev/null"
 	echo -e "$VERT" "Monit started on server-"$1"  [OK]" "$NORMAL"
 	
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "curl -XPUT 'http://localhost:9200/_template/filebeat?pretty' -d@filebeat-index-template.json > /dev/null"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "curl -XPUT 'localhost:9200/filebeat?pretty' -d'
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "curl -XPUT 'http://localhost:9200/_template/filebeat-0?pretty' -d@filebeat-index-template.json > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "curl -XPUT 'localhost:9200/filebeat-0?pretty' -d'
 {
     \"settings\" : {
         \"index\" : {
