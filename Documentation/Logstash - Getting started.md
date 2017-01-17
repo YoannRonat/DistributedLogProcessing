@@ -19,14 +19,12 @@ Avec l'option -e on peut exprimer la configuration de logstash directement en li
 
 __Exemple de lignes de commandes__
 
-    `bin/logstash -e 'input { stdin { } } output { stdout {} }'`
+    ```
+    bin/logstash -e 'input { stdin { } } output { stdout {} }'
+    ```
     
    Dans cet exemple, logstash se contente de répéter ce qu’on lui écrit.
-   ```
-    ...
-    salut les mecs
-    2016-11-01T11:34:17.740Z bvt salut les mecs
-    ```
+
 
 ###Fichier de conf###
 Le fichier de configuration se compose de trois parties: les entrées, le traitement des entrées, la sortie des données traitées. Pour pouvoir utiliser logstash avec un fichier de configuration, il faut utiliser l'option -f.
