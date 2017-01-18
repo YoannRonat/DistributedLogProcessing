@@ -300,6 +300,9 @@ public class Client implements Watcher, Closeable {
     }
     
     public static void main(String args[]) throws Exception { 
+        if (args.length != 3) {
+            throw new Error("Usage: java -cp MyJar.jar org.apache.zookeeper.book.Client ip1,ip2,ip3 NumeroOfBeginning NumberOfLogToDownload");
+        }
         Client c = new Client(args[0]);
         c.startZK();
         
@@ -307,8 +310,8 @@ public class Client implements Watcher, Closeable {
             Thread.sleep(100);
         }
 
-        int first = 1500000;
-        int last = first + 100;
+        int first = Integer.parseInt(args[1]);
+        int last = first + Integer.parseInt(args[2]);
 
         for (int i = first; i < last; i++) {
             TaskObject task = new TaskObject();
