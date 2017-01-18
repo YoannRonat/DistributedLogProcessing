@@ -35,7 +35,11 @@ do
 			# Mesure le temps d'execution réel en secondes (float)
 			# Enregistre le résultat dans un fichier temporaire
 			# N'affiche pas le résultat de l'éxecution
-			/usr/bin/time -f "%e" -o /tmp/bench java -cp /home/xnet/ZooKeeper-Book.jar org.apache.zookeeper.book.Client server-2:2181,server-1:2181,server-3:2181
+			machines="server-2:2181,server-1:2181,server-3:2181"
+			if [ $nb_worker -eq 1 ]; then
+				machines="server-2:2181"
+			fi
+			/usr/bin/time -f "%e" -o /tmp/bench java -cp /home/xnet/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $machines
 			result=$(cat /tmp/bench)
 			results[$i]=$result
 			echo -e "$result,\c" >> "$CSV_FILE_NAME"
