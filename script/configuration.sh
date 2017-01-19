@@ -57,7 +57,7 @@ configuration_stack () {
 
 	# Monit configuration
 	echo -e "$VERT" "Monit Configuration on server-"$1"..." "$NORMAL"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/monit/monitrc https://gist.githubusercontent.com/trussello/121acba2aaabdd675ee19d9b86224fb5/raw/da24136e8b75755f37a438c77d8300253da23e42/monitrc > /dev/null"
+	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo wget -O /etc/monit/monitrc https://gist.githubusercontent.com/trussello/121acba2aaabdd675ee19d9b86224fb5/raw/819668019ede5bf434cf1c036fb877d0a00a39bd/monitrc > /dev/null"
 	echo -e "$VERT" "Monit Configuration on server-"$1" [OK]" "$NORMAL"
 
 	# ZooKeeper configuration
