@@ -12,7 +12,8 @@ filebeat:
       # For each file found under this path, a harvester is started.
       # Make sure not file is defined twice as this can lead to unexpected behaviour.
       paths:
-        - /var/log/*log
+        #- /var/log/*log
+        - /tmp/logs_tf/*log
         #- c:\programdata\elasticsearch\logs\*
 
       # Configure the file encoding for reading files with international characters
@@ -69,7 +70,7 @@ filebeat:
       # Type to be published in the 'type' field. For Elasticsearch output,
       # the type defines the document type these entries should be stored
       # in. Default: log
-      document_type: syslog
+      document_type: log
 
       # Scan frequency in seconds.
       # How often these files should be checked for changes. In case it is set
@@ -421,5 +422,4 @@ logging:
   # Sets log level. The default log level is error.
   # Available log levels are: critical, error, warning, info, debug
   #level: error
-
 

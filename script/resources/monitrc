@@ -1,0 +1,46 @@
+set daemon 60
+
+set eventqueue basedir /var/monit slot 1000
+set mmonit http://admin:swordfish@server-1:8080/collector
+set mmonit http://admin:swordfish@server-2:8080/collector
+set mmonit http://admin:swordfish@server-3:8080/collector
+set mailserver localhost
+set alert root@localhost
+set logfile syslog facility log_daemon
+
+set httpd port 2812 and use address localhost
+allow localhost
+allow admin:monit
+
+check process nginx with pidfile /var/run/nginx.pid
+  start program = "/etc/init.d/nginx start"
+  stop program  = "/etc/init.d/nginx stop"
+  if cpu > 90% for 15 cycles then alert
+  if totalmem > 90% for 15 cycles then alert
+  if loadavg(15min) greater than 10 for 50 cycles then alert
+  group www-data
+
+check process kibana with pidfile /var/run/kibana.pid
+  start program = "/etc/init.d/kibana start"
+  stop program  = "/etc/init.d/kibana stop"
+  group kibana
+
+check process elasticsearch with pidfile /var/run/elasticsearch/elasticsearch.pid
+  start program = "/etc/init.d/elasticsearch start"
+  stop program  = "/etc/init.d/elasticsearch stop"
+  group elasticsearch
+
+check process filebeat with pidfile /var/run/filebeat.pid
+  start program = "/etc/init.d/filebeat start"
+  stop program  = "/etc/init.d/filebeat stop"
+  group filebeat
+
+check process logstash with pidfile /var/run/logstash.pid
+  start program = "/etc/init.d/logstash start"
+  stop program  = "/etc/init.d/logstash stop"
+  group logstash
+  
+check process zookeeper with pidfile /home/xnet/zookeeper/data/zookeeper_server.pid
+  start program = "/home/xnet/monit_zookeeper.sh"
+  stop program  = "/home/xnet/zookeeper/bin/zkServer.sh stop"
+  group zookeeper
