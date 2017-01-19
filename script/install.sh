@@ -85,6 +85,7 @@ installation_stack () {
 	scp -i ~/.ssh/xnet ZooKeeper-Book.jar xnet@server-"$1":~
 	scp -i ~/.ssh/xnet getLog.sh xnet@server-"$1":~
 	scp -i ~/.ssh/xnet monit_zookeeper.sh xnet@server-"$1":~
+	scp -i ~/.ssh/xnet -r resources xnet@server-"$1":~
 	echo -e "$VERT" "Loaded tools on server-"$1"  [OK]" "$NORMAL"
 
 
