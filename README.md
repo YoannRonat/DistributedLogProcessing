@@ -5,8 +5,8 @@
 * Baillet Valérian
 * Bouvattier Jean
 * Dufour Clément
-* Russelo Tom
 * Ronat Yoann
+* Russello Tom
 * Sibille Gaspard
 * Teughels Robin
 
