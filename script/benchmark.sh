@@ -39,7 +39,7 @@ do
 			if [ $nb_worker -eq 1 ]; then
 				machines="server-2:2181"
 			fi
-			/usr/bin/time -f "%e" -o /tmp/bench java -cp /home/xnet/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $machines
+			/usr/bin/time -f "%e" -o /tmp/bench java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $machines
 			result=$(cat /tmp/bench)
 			results[$i]=$result
 			echo -e "$result,\c" >> "$CSV_FILE_NAME"
