@@ -6,15 +6,8 @@ zooDir="zookeeper"
 
 usage()
 {
-	echo 'Utilisation : ./zookeeperStart.sh <numero de la machine>'
+	echo 'Utilisation : ./zookeeper_start.sh <numero de la machine>'
 }
-
-if [ $# != 1 ]
-	then
-	echo "Erreur : Nombre d'argument invalide"
-	usage
-	exit 1
-fi
 
 zookeeper_start_server() {
 	# Lancement du daemon zookeeper sur le master
@@ -37,6 +30,22 @@ zookeeper_start_worker() {
 }
 
 ################# STARTING ZOOKEEPER ON ALL MACHINES ###################
-zookeeper_start_server "$1" & sleep 5 
-zookeeper_start_master "$1" & sleep 5
-zookeeper_start_worker "$1"
+
+
+if [ $# -gt 1 ]
+	then
+	echo "Erreur : Nombre d'argument invalide"
+	usage
+	exit 1
+fi
+
+num=`cat /home/xnet/zookeeper/data/myid`
+
+if [ $# -eq 1 ]
+	then
+	num="$1"
+fi
+
+zookeeper_start_server "$num" & sleep 5 
+zookeeper_start_master "$num" & sleep 5
+zookeeper_start_worker "$num" &

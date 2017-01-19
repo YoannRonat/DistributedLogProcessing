@@ -80,6 +80,14 @@ installation_stack () {
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "tar -zxf $zooArchName -C $zooDir --strip-component 1 > /dev/null"
 	ssh -i  ~/.ssh/xnet xnet@server-"$1" "rm "$zooArchName""
 	echo -e "$VERT" "ZooKeeper installation on server-"$1"  [OK]" "$NORMAL"
+
+	echo -e "$VERT" "Loading tools on server-"$1" ..." "$NORMAL"
+	scp -i ~/.ssh/xnet ZooKeeper-Book.jar xnet@server-"$1":~
+	scp -i ~/.ssh/xnet getLog.sh xnet@server-"$1":~
+	scp -i ~/.ssh/xnet monit_zookeeper.sh xnet@server-"$1":~
+	echo -e "$VERT" "Loaded tools on server-"$1"  [OK]" "$NORMAL"
+
+
 }
 
 
@@ -100,6 +108,3 @@ ssh -i ~/.ssh/xnet xnet@server-3 "sudo locale-gen fr_FR.UTF-8" & wait
 ################## PARALLEL DEPLOYMENT ON ALL SERVERS #################
 
 installation_stack "1" & installation_stack "2" & installation_stack "3" & wait
-scp -i ~/.ssh/xnet ZooKeeper-Book.jar xnet@server-1:~
-scp -i ~/.ssh/xnet ZooKeeper-Book.jar xnet@server-2:~
-scp -i ~/.ssh/xnet ZooKeeper-Book.jar xnet@server-3:~

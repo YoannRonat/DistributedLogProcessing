@@ -80,3 +80,4 @@ start_stack () {
 
 ################# STARTING STACK ON ALL SERVERS ###################
 start_stack "1" & start_stack "2" & start_stack "3" & wait
+/home/xnet/zookeeper_start.sh "1" & /home/xnet/zookeeper_start.sh "2" & /home/xnet/zookeeper_start.sh "3"
