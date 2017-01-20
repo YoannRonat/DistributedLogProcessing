@@ -7,6 +7,9 @@ NORMAL="\\033[0;39m"
 ################# Function definitions ###################
 
 installation_stack () {
+
+	ssh -i ~/.ssh/xnet xnet@server-"$1" "sudo chmod -R 1777 /tmp"
+
 	# Unzip installation
 	echo -e "$VERT" "Unzip installation on server-"$1"..." "$NORMAL"
 	ssh -i ~/.ssh/xnet xnet@server-"$1" "yes | sudo apt-get install unzip"

@@ -14,14 +14,7 @@ if [ $# != 1 ]
 	exit 1
 fi
 
-mkdir /tmp/logs_tf
-wget --quiet -P /tmp/logs_tf http://logs.tf/logs/log_$1.log.zip
-# Permet de s'assurer que TOUS les logs souhaités soient téléchatgés
-SUCCESS=$?
-while [ $SUCCESS -ne "0" ]
-do
-	wget --quiet -P /tmp/logs_tf http://logs.tf/logs/log_$1.log.zip
-	SUCCESS=$?
-done
-unzip -o /tmp/logs_tf/log_$1.log.zip -d /tmp/logs_tf/
-rm /tmp/logs_tf/log_$1.log.zip
+mkdir -p /tmp/logs_tf
+sudo wget --quiet -P /tmp/logs_tf http://logs.tf/logs/log_"$1".log.zip
+sudo unzip -o /tmp/logs_tf/log_"$1".log.zip -d /tmp/logs_tf/
+sudo rm /tmp/logs_tf/log_"$1".log.zip
