@@ -41,6 +41,6 @@ check process logstash with pidfile /var/run/logstash.pid
   group logstash
   
 check process zookeeper with pidfile /home/xnet/zookeeper/data/zookeeper_server.pid
-  start program = "/home/xnet/monit_zookeeper.sh"
+  start program = "/home/xnet/zookeeper_start.sh"
   stop program  = "/home/xnet/zookeeper/bin/zkServer.sh stop"
   group zookeeper

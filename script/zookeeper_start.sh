@@ -1,46 +1,5 @@
-#!/bin/bash
-VERT="\\033[1;32m"
-NORMAL="\\033[0;39m"
+#! /bin/bash
 
-zooDir="zookeeper"
-
-usage()
-{
-	echo 'Utilisation : ./zookeeper_start.sh <numero de la machine>'
-}
-
-zookeeper_start_server() {
-	# Lancement du daemon zookeeper sur le master
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "sudo "$zooDir"/bin/zkServer.sh start"
-}
-
-
-zookeeper_start_master() {
-	# Lancement du master
-	echo -e "$VERT" "Lancement du Master-Worker sur server-"$1"..." "$NORMAL"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Master server-1:2181,server-2:2181,server-3:2181"
-	echo -e "$VERT" "Lancement du Master-Worker sur server-"$1" [OK]" "$NORMAL"
-}
-
-zookeeper_start_worker() {
-	# Lancement du worker
-	echo -e "$VERT" "Lancement du Worker sur server-"$1"..." "$NORMAL"
-	ssh -i  ~/.ssh/xnet xnet@server-"$1" "java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Worker server-1:2181,server-2:2181,server-3:2181"
-	echo -e "$VERT" "Lancement du Worker sur server-"$1" [OK]" "$NORMAL"
-}
-
-################# STARTING ZOOKEEPER ON ALL MACHINES ###################
-
-
-if [ $# != 1 ]
-	then
-	echo "Erreur : Nombre d'argument invalide"
-	usage
-	exit 1
-fi
-
-num="$1"
-
-zookeeper_start_server "$num" & sleep 5 
-zookeeper_start_master "$num" & sleep 5
-zookeeper_start_worker "$num" &
+sudo /home/xnet/zookeeper/bin/zkServer.sh start & sleep 5
+java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Master server-1:2181,server-2:2181,server-3:2181 & sleep 5
+java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Worker server-1:2181,server-2:2181,server-3:2181

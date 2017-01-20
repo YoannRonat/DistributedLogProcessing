@@ -82,7 +82,7 @@ installation_stack () {
 
 	echo -e "$VERT" "Loading tools on server-"$1" ..." "$NORMAL"
 	scp -i ~/.ssh/xnet /home/xnet/getLog.sh xnet@server-"$1":~
-	scp -i ~/.ssh/xnet /home/xnet/monit_zookeeper.sh xnet@server-"$1":~
+	scp -i ~/.ssh/xnet /home/xnet/zookeeper_start.sh xnet@server-"$1":~
 	scp -i ~/.ssh/xnet -r /home/xnet/resources xnet@server-"$1":~
 	echo -e "$VERT" "Loaded tools on server-"$1"  [OK]" "$NORMAL"
 
