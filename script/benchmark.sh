@@ -10,7 +10,7 @@ if [ ! -d "$benchmarkDir" ];then
 fi
 
 #Initialisation du fichier csv
-echo -e "Nombre de logs injectés,Nombre de workers,Moyenne,Variance,Execution 1,Execution 2,Execution 3,Execution 4,Execution 5	Execution 6,Execution 7,Execution 8,Execution 9,Execution 10" > "$CSV_FILE_NAME"
+echo -e "Nombre de logs injectés,Nombre de workers,Moyenne,Variance,Execution 1,Execution 2,Execution 3,Execution 4,Execution 5,Execution 6,Execution 7,Execution 8,Execution 9,Execution 10" > "$CSV_FILE_NAME"
 
 #On initialise les variables
 NB_EXEC=10
@@ -39,7 +39,7 @@ do
 			if [ $nb_worker -eq 1 ]; then
 				machines="server-2:2181"
 			fi
-			/usr/bin/time -f "%e" -o /tmp/bench java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $machines $LOG_START $nb_log &> /dev/null
+			/usr/bin/time -f "%e" -o /tmp/bench sh run_benchmark.sh $machines $LOG_START $nb_log
 			result=$(cat /tmp/bench)
 			results[$i]=$result
 			echo -e "$result,\c" >> "$CSV_FILE_NAME"
