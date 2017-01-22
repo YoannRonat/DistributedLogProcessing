@@ -14,6 +14,7 @@ echo -e "Nombre de logs injectés,Nombre de workers,Moyenne,Variance,Execution 1
 
 #On initialise les variables
 NB_EXEC=10
+LOG_START=1500000
 declare -a NB_LOGS=(50 100 500 2000);
 declare -a NB_WORKERS=(1 3);
 result=0.0
@@ -25,7 +26,6 @@ do
 	for nb_log in ${NB_LOGS[@]}
 	do
 	echo "Execution avec $nb_worker worker et $nb_log logs."
-#TODO : Recompiler le client à chaque fois qu'on change le nombre de logs injectés (client.java ligne 311)
 		echo -e "$nb_log,$nb_worker,MOYENNE,VARIANCE,\c" >> "$CSV_FILE_NAME"
 		declare -a results=()
 		#On execute $NB_EXEC fois le benchmark
@@ -39,7 +39,7 @@ do
 			if [ $nb_worker -eq 1 ]; then
 				machines="server-2:2181"
 			fi
-			/usr/bin/time -f "%e" -o /tmp/bench java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $machines
+			/usr/bin/time -f "%e" -o /tmp/bench java -cp /home/xnet/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $machines $LOG_START $nb_log &> /dev/null
 			result=$(cat /tmp/bench)
 			results[$i]=$result
 			echo -e "$result,\c" >> "$CSV_FILE_NAME"
