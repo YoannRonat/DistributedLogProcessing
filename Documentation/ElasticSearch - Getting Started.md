@@ -33,8 +33,20 @@ Ca doit afficher un JSON
 
 
 #####Configuration
-pour éviter des débordements de mémoire :  
-sudo sysctl vm.swappiness=1
+La configuration se fait via le fichier elasticsearch.yml. Par défaut se fichier se trouve dans le répertoire _/etc/elasticsearch_
+les éléments importants sont :
+ 
+    cluster.name:
+    
+ Qui sert à définir le nom du cluster, ainsi, chaque noeud avec ce nom de cluster ne pourra rejoindre que les autres noeuds appartenants au même cluster.
+ 
+    network.host: [_local_, _ens3_]
+
+Permet de d'indiquer au noeud son adresse ip, les mots _local_ permet d'autoriser l'accès à elasticsearch par l'adresse localhost et _ens3_ est le nom de l'interface réseau de la machine
+
+    discovery.zen.ping.unicast.hosts: ["server-1", "server-2", "server-3"]
+    
+Cette option indique au noeud en cours quelles adresses il doit ping afin de découvrir d'autres noeuds. Sachant qu'il ne se connectera qu'avec les noeuds ayant le même _cluster.name_
 
 
 
