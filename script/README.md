@@ -8,17 +8,17 @@
 ###Les scripts sont les suivants: 
 
 #### install.sh
-Permet d'installer la stack sur les 3 machines via le manager.
-Requiert que la machine manager ait tous les scripts et le dossier ressources sur son /home  
+Permet d'installer la stack sur les 3 machines via le manager.  
+Requiert que la machine manager ait tous les scripts et le dossier ressources sur son /home . 
 Utilisation : `./install.sh`
 
 #### configuration.sh
-Permet de configurer les différents composants de la stack via le manager.
+Permet de configurer les différents composants de la stack via le manager.  
 Requiert que le script install.sh ait été lancé auparavant.  
 Utilisation: `./configuration.sh`
 
 #### start.sh
-Permet de démarrer les composants de la stack via le manager.
+Permet de démarrer les composants de la stack via le manager.  
 Requiert que le script configuration.sh ait été lancé auparavant.  
 Utilisation : `./start.sh`
 
@@ -39,7 +39,7 @@ Permet de créer un serveur zookeeper, de lancer un master et un worker sur la m
 Utilisation: `./zookeeper_start.sh`
 
 #### broadcast_cmd.sh
-Permet d'executer une même commande sur les trois serveurs.
+Permet d'executer une même commande sur les trois serveurs.  
 Requiert que le fichier hosts soit à jour avec le nom associé à l'IP de chacune des machines  
 Utilisation: `./broadcast_cmd "commande"`
 
