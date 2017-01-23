@@ -28,9 +28,10 @@ sudo service kibana start
 
 ###Utilisation###
 Une fois Kibana correctement configuré et lancé avec un reverse proxy (nginx par exemple), vous pouvez vous rendre sur l'adresse mise dans la configuration de nginx. Dans notre cas pour le serveur 1, cette adresse est :
-```
-http://137.74.31.92/app/kibana
-```
+
+[http://137.74.31.92/app/kibana](http://137.74.31.92/app/kibana)
+
+
 Il faut ensuite configuré l'index par défaut qui est dans notre cas `filebeat-0`  sur ElasticSearch en allant dans `Settings`, ajouter un index et taper le nom de cet index pour le créer puis appuyer sur l'étoile pour le configurer par défaut. 
 
 À ce stade, nous pouvons voir apparaître dans `Discover` les logs qui sont en train d'être traités ou qui ont déjà été traités par la stack ELK en mettant la bonne échelle de temps.
