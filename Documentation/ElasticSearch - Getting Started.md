@@ -1,8 +1,11 @@
 ##Elasticsearch##
 
 Elasticsearch est un logiciel opensource qui permet de gérer une base de données documentaire distribuée. C'est à dire que Elasticsearch permet de stocker des documents dans la base ou bien d'en retrouver d'autre. Il assure également la distribution de ses données sur plusieurs machines. Elastic est basé sur des _clusters_, _nodes_, _index_ et _shards_. 
-Le Cluster est l'entité englobante, c'est à dire l'ensemble des machines travaillants ensemble. Chaque machine peut contenir un ou plusieur _node_ mais l'usage de plusieurs _nodes_ sur une machine n'est recommandé que en phase de développement et surtout pas en production. 
+
+Le Cluster est l'entité englobante, c'est à dire l'ensemble des machines travaillants ensemble. Chaque machine peut contenir un ou plusieur _node_ mais l'usage de plusieurs _nodes_ sur une machine n'est recommandé que en phase de développement et surtout pas en production.
+
 Ensuite un _index_ est une base de données qui se base sur le _cluser_ et les _nodes_ définis.
+
 L'_index_ est divisé en _primary shards_ est une partie de la base de donnée. C'est à dire qu'un _index_ avec 2 _primary shards_ aura ses données réparties sur les 2 _primary shards_ équitablement. Ainsi si un _primary shard_ disparait alors, la moitié de la base de données disparaît. Pour éviter cela on peut utiliser des _replicas_. c'est à dire des réplication des primary qui se feront sur les autres machines. Ainsi si le _node_ contenant _primary 1_ disparait, ses données seront toujours sur un des _replicas_ sur un auter _node_. 
 
 
@@ -55,16 +58,16 @@ Cette option indique au noeud en cours quelles adresses il doit ping afin de dé
 une fois qu'elastic est lancé, on peut créer un index, une bonne manière de créer un index est de définir directement sa configuration. Par défaut, les indexs auront 1 _primary_ et 5 _replicas_.
 Attention, le nombre de _primary_ ne se configure qu'à la création de l'index, on ne peut plus revenir dessus ensuite. CEla se fait de la manière suivante :
 
-        ssh -i ~/.ssh/xnet xnet@server-"$1" "curl -XPUT 'localhost:9200/filebeat-0?pretty' -d'
-    {
-        \"settings\" : {
-            \"index\" : {
-                \"number_of_shards\" : 2, 
-                \"number_of_replicas\" : 2 
+        curl -XPUT 'localhost:9200/Index_Name?pretty' -d'
+        {
+            \"settings\" : {
+                \"index\" : {
+                    \"number_of_shards\" : 2, 
+                    \"number_of_replicas\" : 2 
+                }
             }
         }
-    }
-    '" 
+        '" 
 
 
 
