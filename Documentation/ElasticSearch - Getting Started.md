@@ -60,10 +60,10 @@ Attention, le nombre de _primary_ ne se configure qu'à la création de l'index,
 
         curl -XPUT 'localhost:9200/Index_Name?pretty' -d'
         {
-            \"settings\" : {
-                \"index\" : {
-                    \"number_of_shards\" : 2, 
-                    \"number_of_replicas\" : 2 
+            "settings" : {
+                "index" : {
+                    "number_of_shards" : 2, 
+                    "number_of_replicas" : 2 
                 }
             }
         }
