@@ -32,6 +32,7 @@ Notre système distribué devra alors repérer les logiciels defaillants et les 
 * [Kibana](Documentation/Kibana - Getting started.md)
 * [Zookeeper](Documentation/Zookeeper - Getting Started.md)
 * [Monit](Documentation/Monit - Guetting started.md)
+* [Scripts](script/README.md)
 
 ## Application de démonstration ##
 ### But de l'application ###
