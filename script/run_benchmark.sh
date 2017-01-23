@@ -37,7 +37,7 @@ ENTRY_NUM=$((2*LOG_NUM))
 record_offset=$(get_record_number)
 
 $echo_cmd -e "$VERT""Log processing started"$NORMAL" ($LOG_NUM logs)"
-java -cp ./resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $MACHINES $LOG_START $LOG_NUM > /dev/null
+java -cp /home/xnet/resources/ZooKeeper-Book.jar org.apache.zookeeper.book.Client $MACHINES $LOG_START $LOG_NUM > /dev/null
 if [ $? -ne 0 ]; then
 	exit $?
 fi

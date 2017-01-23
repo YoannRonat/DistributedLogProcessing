@@ -39,7 +39,7 @@ do
 			if [ $nb_worker -eq 1 ]; then
 				machines="server-2:2181"
 			fi
-			/usr/bin/time -f "%e" -o /tmp/bench sh run_benchmark.sh $machines $LOG_START $nb_log
+			/usr/bin/time -f "%e" -o /tmp/bench sh /home/xnet/resources/run_benchmark.sh $machines $LOG_START $nb_log
 			result=$(cat /tmp/bench)
 			results[$i]=$result
 			echo -e "$result,\c" >> "$CSV_FILE_NAME"
