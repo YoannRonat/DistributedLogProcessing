@@ -3,7 +3,7 @@
 ## Structure du dossier
 
 	script/	        # Dossier contenant les scripts et leurs ressources
-		ressources/	    # Fichiers de configuration pour la stack
+		ressources/ # Fichiers de configuration pour la stack
 
 ###Les scripts sont les suivants: 
 
