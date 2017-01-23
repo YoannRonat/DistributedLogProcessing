@@ -9,7 +9,7 @@
 
 #### install.sh
 Permet d'installer la stack sur les 3 machines via le manager.  
-Requiert que la machine manager ait tous les scripts et le dossier ressources sur son /home . 
+Requiert que la machine manager ait tous les scripts et le dossier ressources sur son /home.  
 Utilisation : `./install.sh`
 
 #### configuration.sh
