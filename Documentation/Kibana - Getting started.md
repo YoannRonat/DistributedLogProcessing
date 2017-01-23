@@ -1,6 +1,4 @@
 # Kibana - Getting started
-========
-
 
 ###Introduction###
 Kibana est un outil Open Source permettant la visualisation et l'analyse de données stockées sur [ElasticSearch](ElasticSearch - Getting Started.md). Plus généralement, il permet d'avoir un dashboard sur un serveur web (grâce à un reverse proxy du type Nginx) pour faciliter les interactions avec la base de données et permet la création de diagrammes de visualisation de l'information ainsi que des cartes.
