@@ -67,7 +67,7 @@ Attention, le nombre de _primary_ ne se configure qu'à la création de l'index,
                 }
             }
         }
-        '" 
+        ' 
 
 
 
