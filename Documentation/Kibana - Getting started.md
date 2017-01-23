@@ -1,7 +1,5 @@
 # Kibana - Getting started
-
-
-----------
+========
 
 
 ###Introduction###
