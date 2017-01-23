@@ -1,4 +1,4 @@
-#Elasticsearch"
+#Elasticsearch#
 
 Elasticsearch est un logiciel opensource qui permet de gérer une base de données documentaire distribuée. C'est à dire que Elasticsearch permet de stocker des documents dans la base ou bien d'en retrouver d'autre. Il assure également la distribution de ses données sur plusieurs machines.
 ======
