@@ -56,7 +56,7 @@ Cette option indique au noeud en cours quelles adresses il doit ping afin de dé
 
 ######Configuration des index
 une fois qu'elastic est lancé, on peut créer un index, une bonne manière de créer un index est de définir directement sa configuration. Par défaut, les indexs auront 1 _primary_ et 5 _replicas_.
-Attention, le nombre de _primary_ ne se configure qu'à la création de l'index, on ne peut plus revenir dessus ensuite. CEla se fait de la manière suivante :
+Attention, le nombre de _primary_ ne se configure qu'à la création de l'index, on ne peut plus revenir dessus ensuite. Cela se fait de la manière suivante :
 
         curl -XPUT 'localhost:9200/Index_Name?pretty' -d'
         {
