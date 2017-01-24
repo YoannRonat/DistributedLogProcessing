@@ -49,7 +49,7 @@ current_time=$(date +%s)
 while [ "$records_nb" -lt "$ENTRY_NUM" ]; do
 	sleep $sleep_time
 	current_time=$(date +%s)
-	waiting_time=$(($LOG_NUM))
+	waiting_time=$(($LOG_NUM/2))
 	if [ "$waiting_time" -le $((current_time-begin_time)) ]; then
 		# Get the record number registered 
 		# (number of log finished to be processed)
