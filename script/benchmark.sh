@@ -31,7 +31,7 @@ echo "Execution de $nb_log logs."
 		# Mesure le temps d'execution réel en secondes (float)
 		# Enregistre le résultat dans un fichier temporaire
 		# N'affiche pas le résultat de l'exécution
-		machines="server-1:2181" #,server-2:2181,server-3:2181"
+		machines="server-1:2181,server-2:2181,server-3:2181"
 		/usr/bin/time -f "%e" -o /tmp/bench sh /home/xnet/resources/run_benchmark.sh $machines $LOG_START $nb_log
 		result=$(cat /tmp/bench)
 		results[$i]=$result
