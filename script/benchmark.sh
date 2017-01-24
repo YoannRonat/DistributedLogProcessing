@@ -32,11 +32,11 @@ echo "Execution de $nb_log logs."
 		# Enregistre le résultat dans un fichier temporaire
 		# N'affiche pas le résultat de l'exécution
 		machines="server-1:2181,server-2:2181,server-3:2181"
-		/usr/bin/time -f "%e" -o /tmp/bench sh /home/xnet/resources/run_benchmark.sh $machines $LOG_START $nb_log
+		/usr/bin/time -f "%e" -o /tmp/bench sh /home/xnet/run_benchmark.sh $machines $LOG_START $nb_log
 		result=$(cat /tmp/bench)
 		results[$i]=$result
 		echo -e "$result,\c" >> "$CSV_FILE_NAME"
-		sleep $nb_log #wait for the end of iddle
+		sleep $((1*$nb_log)) #wait for the end of extra processing
 	done
 	#Calcul de la moyenne
 	tot=0.0
