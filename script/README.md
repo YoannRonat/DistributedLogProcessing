@@ -43,8 +43,10 @@ Permet d'executer une même commande sur les trois serveurs.
 Requiert que le fichier hosts soit à jour avec le nom associé à l'IP de chacune des machines  
 Utilisation: `./broadcast_cmd "commande"`
 
-#### benchmark.sh
-Permet d'exécuter des tests de performances pour avoir une sortie en CSV (à peaufiner)
+#### run_benchmark.sh
+Permet d'exécuter des tests de performances pour avoir une sortie en CSV dans `/tmp/results`  
+Requiert que la stack soit lancée.  
+Utilisation `./run_benchmark.sh server-1:2181,server-2:2181,server-3:2181 [log de début] [nb de logs à DL]`
 
 #### getLog.sh
 Permet de télécharger un log sur la plateforme [Logs TeamFortress](http://logs.tf/)  
