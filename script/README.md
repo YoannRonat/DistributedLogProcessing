@@ -44,7 +44,7 @@ Requiert que le fichier hosts soit à jour avec le nom associé à l'IP de chacu
 Utilisation: `./broadcast_cmd "commande"`
 
 #### run_benchmark.sh
-Permet d'exécuter des tests de performances pour avoir une sortie en CSV.  
+Permet d'exécuter des tests de performances pour avoir une sortie en CSV dans `/tmp/results`
 Requiert que la stack soit lancée.  
 Utilisation `./run_benchmark.sh server-1:2181,server-2:2181,server-3:2181 [log de début] [nb de logs à DL]`
 
