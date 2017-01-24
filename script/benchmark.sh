@@ -15,7 +15,7 @@ echo -e "Nombre de logs injectés,Moyenne,Variance,Execution 1,Execution 2,Execu
 #On initialise les variables
 NB_EXEC=10
 LOG_START=1500000
-declare -a NB_LOGS=(50 100 500 2000);
+declare -a NB_LOGS=(50 100 500);
 result=0.0
 
 #Pour chaque nombre de logs à injecter
@@ -36,6 +36,7 @@ echo "Execution de $nb_log logs."
 		result=$(cat /tmp/bench)
 		results[$i]=$result
 		echo -e "$result,\c" >> "$CSV_FILE_NAME"
+		sleep $nb_log #wait for the end of iddle
 	done
 	#Calcul de la moyenne
 	tot=0.0
