@@ -1,6 +1,6 @@
-#Système Distribué de Traitement des Données#
+# Système Distribué de Traitement des Données
 
-##Équipe##
+## Équipe
 * Assouline Daniel
 * Baillet Valérian
 * Bouvattier Jean
@@ -10,7 +10,7 @@
 * Sibille Gaspard
 * Teughels Robin
 
-## Présentation du projet ##
+## Présentation du projet
 Le projet a pour but d'étudier et de mettre en application un service distribuée de traitement de log de serveurs. Nous avons choisis de travailler sur les logs d'un jeu en ligne appelé Team Fortress 2.
 
 Notre but est de récupérer les logs sur le serveur du jeu, les traiter puis stocker et visualiser les résultats du traitement. Pour cela nous allons utiliser la stack Elastic composée de quatres logiciels:
@@ -25,7 +25,7 @@ De plus, nous devons utilisé trois machines pour réaliser notre traitement de 
 
 Notre système distribué devra alors repérer les logiciels defaillants et les relancer et, dans le pire cas, détecter une machine qui crash et essayer de la relancer. Ces pannes ne doivent en aucun cas entrainer un mauvais fonctionnements des autres machines.
 
-## Documentations logiciels##
+## Documentations logiciels
 * [Filebeat](Documentation/Beats - Getting Started.md)
 * [Logstash](Documentation/Logstash - Getting started.md)
 * [ElasticSearch](Documentation/ElasticSearch - Getting Started.md)
@@ -34,15 +34,15 @@ Notre système distribué devra alors repérer les logiciels defaillants et les 
 * [Monit](Documentation/Monit - Guetting started.md)
 * [Scripts](script/README.md)
 
-## Application de démonstration ##
-### But de l'application ###
+## Application de démonstration
+### But de l'application
 Notre application vise principalement à montrer le côté distribué de notre système. 
 
 Pour rappel, tous les logiciels, décrits précédemment, sont installés sur chaque serveur de notre système et elasticsearch crée suffisamment de bases de données principales et de replicats pour que tous les serveurs de notre système possèdent les mêmes informations. C'est-à-dire que, durant la démonstration, les visualisations des données,faite par kibana, doivent être les mêmes sur les  serveurs.
 
 Notre application de démonstration a pour but de visualiser les scores totaux des équipes bleues et rouges grâce à un graphique approprié.
 
-### Fonctionnement de l'application ###
+### Fonctionnement de l'application
 
 Après avoir installés correctement tous les composants de notre système (la stack Elastic, Monit et Zookeeper) et lancés tous les services associés, on peut lancer le manager qui va distribuer les jobs aux différents serveurs gràce au script [zookeeper](script/zookeeper_start.sh).
 
